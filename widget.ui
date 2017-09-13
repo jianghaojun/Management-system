@@ -231,7 +231,7 @@ alternate-background-color: rgb(255, 85, 0);</string>
          <string notr="true">background-image: url(:/image/images/empty_table.png);</string>
         </property>
         <property name="text">
-         <string>    </string>
+         <string/>
         </property>
         <property name="pixmap">
          <pixmap resource="image.qrc">:/image/images/empty_table.png</pixmap>
@@ -622,7 +622,7 @@ alternate-background-color: rgb(255, 85, 0);</string>
     </rect>
    </property>
    <property name="text">
-    <string>加水</string>
+    <string>呼叫服务</string>
    </property>
   </widget>
   <widget class="QPushButton" name="hurry_pushButton">
@@ -735,7 +735,7 @@ color: rgb(255, 255, 255);</string>
   <widget class="QPushButton" name="pay_pushButton">
    <property name="geometry">
     <rect>
-     <x>720</x>
+     <x>800</x>
      <y>30</y>
      <width>75</width>
      <height>23</height>
@@ -756,6 +756,32 @@ color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>提交评价</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="query_pushButton">
+   <property name="geometry">
+    <rect>
+     <x>720</x>
+     <y>30</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>查询进度</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="querytable_pushButton">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>60</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>查询餐桌</string>
    </property>
   </widget>
  </widget>

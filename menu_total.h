@@ -8,7 +8,7 @@
 #include <QSqlQuery>
 #include <QMessageBox>
 #include <QDebug>
-#include "Food.h"
+#include "food.h"
 
 //系统管理员管理的总菜单 Menu_total;
 

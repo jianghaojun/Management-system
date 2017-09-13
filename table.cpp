@@ -3,7 +3,7 @@
 Table::Table(int ti, int ts):table_status(ts), table_id(ti)
 {}
 
-inline int Table::getTableStatus()
+int Table::getTableStatus()
 {
     return table_status;
 }
@@ -14,7 +14,7 @@ int Table::setTableStatus(int ts)
     return table_status;
 }
 
-inline int Table::getTableId() const
+int Table::getTableId() const
 {
     return table_id;
 }

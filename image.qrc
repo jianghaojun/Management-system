@@ -12,5 +12,10 @@
         <file>images/customer2.png</file>
         <file>images/empty_table.png</file>
         <file>images/full_table.png</file>
+        <file>images/nocs_table.png</file>
+        <file>images/nowaiter_table.png</file>
+        <file>images/pay.png</file>
+        <file>images/chef.png</file>
+        <file>images/waiter1.png</file>
     </qresource>
 </RCC>

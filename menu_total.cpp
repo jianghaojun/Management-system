@@ -3,7 +3,7 @@
 #include <QList>
 #include <iostream>
 
-#include "Food.h"
+#include "food.h"
 #include "menu_total.h"
 
 
@@ -65,7 +65,7 @@ void menu_replace(QMultiHash <QString, Food> &hash, QString type, Food oldf, Foo
 {
     hash.remove(type, oldf);
     hash.insert(type, newf);
-    cout<<"Succeed!"<<endl;
+    //cout<<"Succeed!"<<endl;
 }
 
 void menu_show(QMultiHash <QString, Food> hash)

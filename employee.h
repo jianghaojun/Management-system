@@ -43,9 +43,11 @@ public:
     int setWaiterTable(int wt);
     int getWaiterTable() const;
 
+    QMultiHash<int, double> service_record;  //记录当天服务的桌号和评价
+
 private:
     int waiter_table_id;                     //服务的桌号
-    QMultiHash<int, double> service_record;  //记录当天服务的桌号和评价
+
 
 };
 
@@ -60,7 +62,6 @@ public:
 
     virtual double set_Evaluation(int food_id,double e);
 
-private:
     QMultiHash<int, double> cook_record;  //记录当天所作的菜（编号）和评价
 };
 

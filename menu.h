@@ -11,7 +11,7 @@ public:
     void addFood(Food f);        //添加food到Menulist尾部
     void deleteFood();           //删除Menulist尾部的food
     void getMenu();              //将所点的菜输出
-    int getSum();          //所点菜的总额，从Menulist里面计算
+    int getSum();                //所点菜的总额，从Menulist里面计算
 
     QVector <Food> Menulist;     //储存每桌所点的菜
 };

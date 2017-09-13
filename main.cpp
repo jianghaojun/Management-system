@@ -7,7 +7,7 @@
 
 #include "table.h"
 #include "employee.h"
-#include "Food.h"
+#include "food.h"
 #include "menu_total.h"
 #include "account_list.h"
 #include "list.h"
@@ -20,9 +20,8 @@
 #include "ad_add_dialog.h"
 #include "ad_delete_dialog.h"
 #include "ad_searchmenu_dialog.h"
-
-//QTextStream cin(stdin, QIODevice::ReadOnly);
-//QTextStream cout(stdout, QIODevice::WriteOnly);
+#include "waiter_widget.h"
+#include "chef_widget.h"
 
 QHash <QString, QString> Customer;       //存顾客账户
 QHash <QString, QString> Employee;       //存雇员账户
@@ -35,6 +34,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
+    //初始化操作
     createdatabase();
     Customer_set(Customer);
     Employee_set(Employee);
@@ -45,7 +45,6 @@ int main(int argc, char *argv[])
 
 
     //界面对象:
-    Widget cs_widget;                           //顾客界面
     login_Dialog logindialog;                   //登录界面
     register_Dialog registerdialog;             //注册界面
     Administrator_widget ad_widget;             //系统管理员界面
@@ -53,18 +52,24 @@ int main(int argc, char *argv[])
     ad_add_Dialog ad_add_dialog;                //系统管理员添加账号界面
     ad_delete_Dialog ad_delete_dialog;          //系统管理员删除账号界面
     ad_searchmenu_Dialog ad_searchmenu_dialog;  //系统管理员搜索菜品界面
+    Widget cs_widget;                           //顾客界面
+    waiter_widget waiterwidget;                 //服务员界面
+    chef_widget chefwidget;                     //厨师界面
 
-    //logindialog.show();
-    cs_widget.show();
+    logindialog.show();
+    //cs_widget.show();
 
     QObject::connect(&logindialog, SIGNAL(cs_widgetshow()), &cs_widget, SLOT(widgetshow()));             //登录界面到顾客界面
-    QObject::connect(&logindialog, SIGNAL(send_customer_pn(QString)), &cs_widget, SLOT(receive_customer_pn(QString)));  //登录界面给顾客界面传手机号
     QObject::connect(&logindialog, SIGNAL(register_dialogshow()), &registerdialog, SLOT(dialogshow()));  //登录界面到注册界面
     QObject::connect(&logindialog, SIGNAL(administrator_widgetshow()), &ad_widget, SLOT(widgetshow()));  //登录界面到系统管理员界面
+    QObject::connect(&logindialog, SIGNAL(waiter_widgetshow()), &waiterwidget, SLOT(widgetshow()));      //登录界面到服务员界面
+    QObject::connect(&logindialog, SIGNAL(chef_widgetshow()), &chefwidget, SLOT(widgetshow()));          //登录界面到厨师界面
+    QObject::connect(&logindialog, SIGNAL(send_customer_pn(QString)), &cs_widget, SLOT(receive_customer_pn(QString)));  //登录界面给顾客界面传手机号
 
     QObject::connect(&registerdialog, SIGNAL(login_dialogshow()), &logindialog, SLOT(dialogshow()));     //注册界面到登录界面
-
     QObject::connect(&cs_widget, SIGNAL(login_dialogshow()), &logindialog, SLOT(dialogshow()));          //顾客界面到登录界面
+    QObject::connect(&waiterwidget, SIGNAL(login_dialogshow()), &logindialog, SLOT(dialogshow()));       //服务员界面到登录界面
+    QObject::connect(&chefwidget, SIGNAL(login_dialogshow()), &logindialog, SLOT(dialogshow()));       //厨师界面到登录界面
 
     QObject::connect(&ad_widget, SIGNAL(login_dialogshow()), &logindialog, SLOT(dialogshow()));                  //系统管理员界面到登录界面
     QObject::connect(&ad_widget, SIGNAL(ad_search_dialogshow()), &ad_search_dialog, SLOT(dialogshow()));         //系统管理员界面到查询账号界面
@@ -76,6 +81,9 @@ int main(int argc, char *argv[])
     QObject::connect(&ad_add_dialog, SIGNAL(administrator_widgetshow()), &ad_widget, SLOT(widgetshow()));        //添加账号界面到系统管理员界面
     QObject::connect(&ad_delete_dialog, SIGNAL(administrator_widgetshow()), &ad_widget, SLOT(widgetshow()));     //删除账号界面到系统管理员界面
     QObject::connect(&ad_searchmenu_dialog, SIGNAL(administrator_widgetshow()), &ad_widget, SLOT(widgetshow())); //查询菜品界面到系统管理员界面
+
+    QObject::connect(&cs_widget, SIGNAL(addwater()), &waiterwidget, SLOT(addwater_message()));                   //顾客发送加水的信息
+    QObject::connect(&cs_widget, SIGNAL(foodhurry()), &waiterwidget, SLOT(foodhurry_message()));                 //顾客发送催菜的信息
 
     return a.exec();
 }

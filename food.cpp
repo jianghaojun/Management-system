@@ -3,10 +3,18 @@
 #include <iostream>
 using namespace std;
 
-
-Food::Food(QString fn, int id, int fp, int fe,  double fs):
+Food::Food(QString fn, int id, int fp,  int fs, double fe):
     food_name(fn), food_id(id), food_price(fp),  food_evaluation(fe), food_status(fs)
 {
+}
+
+Food::Food(const Food &f)
+{
+    food_evaluation = f.food_evaluation;
+    food_id = f.food_id;
+    food_name = f.food_name;
+    food_price = f.food_price;
+    food_status =f.food_status;
 }
 
 int Food::setFood_Status(int fs)

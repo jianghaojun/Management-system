@@ -28,7 +28,9 @@ SOURCES += main.cpp\
     ad_searchmenu_dialog.cpp \
     table.cpp \
     menu.cpp \
-    list.cpp
+    list.cpp \
+    waiter_widget.cpp \
+    chef_widget.cpp
 
 HEADERS  += widget.h \
     account_list.h \
@@ -45,7 +47,9 @@ HEADERS  += widget.h \
     ad_searchmenu_dialog.h \
     table.h \
     menu.h \
-    list.h
+    list.h \
+    waiter_widget.h \
+    chef_widget.h
 
 FORMS    += widget.ui \
     login_dialog.ui \
@@ -54,7 +58,9 @@ FORMS    += widget.ui \
     ad_search_dialog.ui \
     ad_add_dialog.ui \
     ad_delete_dialog.ui \
-    ad_searchmenu_dialog.ui
+    ad_searchmenu_dialog.ui \
+    waiter_widget.ui \
+    chef_widget.ui
 
 RESOURCES += \
     image.qrc

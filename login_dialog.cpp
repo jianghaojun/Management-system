@@ -54,7 +54,7 @@ void login_Dialog::on_loginpushButton_clicked()    //登录按钮
             {
                 QMessageBox::information(this, tr("登录成功"), tr("登录成功！"), QMessageBox::Ok);
                 this->hide();
-                emit cs_widgetshow();
+                emit waiter_widgetshow();
             }
             else
             {
@@ -68,7 +68,7 @@ void login_Dialog::on_loginpushButton_clicked()    //登录按钮
             {
                 QMessageBox::information(this, tr("登录成功"), tr("登录成功！"), QMessageBox::Ok);
                 this->hide();
-                emit cs_widgetshow();
+                emit chef_widgetshow();
             }
             else
             {
@@ -106,14 +106,11 @@ void login_Dialog::on_loginpushButton_clicked()    //登录按钮
     }
 }
 
-
 void login_Dialog::on_registerpushButton_clicked()    //注册按钮
 {
     this->hide();
     emit register_dialogshow();
 }
-
-
 
 void login_Dialog::on_quitpushButton_clicked()   //退出按钮 数据回传到数据库
 {

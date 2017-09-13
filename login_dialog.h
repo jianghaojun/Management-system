@@ -38,6 +38,10 @@ signals:
 
     void administrator_widgetshow();  //系统管理员的界面显示
 
+    void waiter_widgetshow();         //服务员界面显示
+
+    void chef_widgetshow();           //厨师界面显示
+
     void send_customer_pn(QString);   //向顾客界面传送顾客的手机号
 };
 
