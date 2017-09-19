@@ -13,6 +13,7 @@ void createdatabase()
     }
 
     QSqlQuery query(db);
+
     //Customer账户信息表
     query.exec("create table customer ( phone_number varchar primary key,"
                 " password varchar)");
@@ -26,6 +27,31 @@ void createdatabase()
     query.exec("insert into employee values('13051327250', '123456')");
     query.exec("insert into employee values('18810301889', '123456')");
     query.exec("insert into employee values('1', '1')");
+
+
+    //Waiter账户信息表
+    query.exec("create table waiter ( phone_number varchar,"
+                " password varchar, id varchar primary key, evaluate varchar, count int, sum double)");
+    query.exec("insert into waiter values('1', '1', '1','0', 0, 0)");
+    query.exec("insert into waiter values('2', '1', '2','0', 0, 0)");
+    query.exec("insert into waiter values('13051327250', '123456', '3', '0', 0, 0)");
+
+    //Chef账户信息表
+    query.exec("create table chef ( phone_number varchar,"
+               " password varchar, id varchar primary key, evaluate varchar, count int, sum double)");
+    query.exec("insert into chef values('3', '1', '1', '0', 0, 0)");
+    query.exec("insert into chef values('4', '1', '2', '0', 0, 0)");
+    query.exec("insert into chef values('18810301889', '123456', '3', '0', 0, 0)");
+
+    //Manager账户信息表
+    query.exec("create table manager ( phone_number varchar primary key,"
+                " password varchar)");
+    query.exec("insert into manager values('5', '1')");
+
+    //System Manager 账户信息表
+    query.exec("create table system_manager ( phone_number varchar primary key,"
+                " password varchar)");
+    query.exec("insert into system_manager values('6', '1')");
 
     //总菜单表
     query.exec("create table menu_total (id int primary key, food_type varchar,"

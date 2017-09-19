@@ -6,37 +6,149 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>240</width>
+    <height>330</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>登录Login</string>
+   <string>登录界面</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">
+background-color: rgb(255, 255, 255);</string>
   </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>85</x>
+     <y>13</y>
+     <width>60</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>60</width>
+     <height>60</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>60</width>
+     <height>60</height>
+    </size>
+   </property>
+   <property name="sizeIncrement">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 14pt &quot;Arial&quot;;
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="image.qrc">:/image/images/login_head.png</pixmap>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pwdlabel">
+   <property name="geometry">
+    <rect>
+     <x>29</x>
+     <y>141</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="image.qrc">:/image/images/login_lock.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pnlabel">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>96</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="sizeIncrement">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="image.qrc">:/image/images/login_people.png</pixmap>
+   </property>
+  </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>30</y>
-     <width>269</width>
-     <height>235</height>
+     <x>23</x>
+     <y>90</y>
+     <width>196</width>
+     <height>199</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
     <property name="spacing">
-     <number>30</number>
+     <number>15</number>
     </property>
     <item>
-     <widget class="QLabel" name="label">
-      <property name="styleSheet">
-       <string notr="true">font: 75 14pt &quot;Arial&quot;;
-</string>
+     <widget class="QLineEdit" name="pnlineEdit">
+      <property name="minimumSize">
+       <size>
+        <width>190</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>190</width>
+        <height>30</height>
+       </size>
       </property>
       <property name="text">
-       <string>天一阁欢迎您</string>
+       <string>请输入手机号</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -44,114 +156,179 @@
      </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <property name="spacing">
-       <number>20</number>
+     <widget class="QLineEdit" name="pwdlineEdit">
+      <property name="minimumSize">
+       <size>
+        <width>190</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>190</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>请输入密码:</string>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="comboBox">
+      <property name="minimumSize">
+       <size>
+        <width>190</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>190</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="editable">
+       <bool>true</bool>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>8</width>
+        <height>8</height>
+       </size>
+      </property>
+      <property name="duplicatesEnabled">
+       <bool>false</bool>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
       </property>
       <item>
-       <widget class="QLabel" name="pnlabel">
-        <property name="text">
-         <string>手机号：</string>
-        </property>
-       </widget>
+       <property name="text">
+        <string>身份</string>
+       </property>
       </item>
       <item>
-       <widget class="QLineEdit" name="pnlineEdit"/>
+       <property name="text">
+        <string>顾客</string>
+       </property>
       </item>
-     </layout>
+      <item>
+       <property name="text">
+        <string>服务员</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>厨师</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>经理</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>系统管理员</string>
+       </property>
+      </item>
+     </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <layout class="QVBoxLayout" name="verticalLayout">
       <property name="spacing">
-       <number>20</number>
-      </property>
-      <item>
-       <widget class="QLabel" name="pwdlabel">
-        <property name="text">
-         <string>密码为：</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="pwdlineEdit">
-        <property name="echoMode">
-         <enum>QLineEdit::Password</enum>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
-      <item>
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>身份为：</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="comboBox">
-        <item>
-         <property name="text">
-          <string>顾客</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>服务员</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>厨师</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>经理</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>系统管理员</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
-      <property name="spacing">
-       <number>20</number>
+       <number>5</number>
       </property>
       <item>
        <widget class="QPushButton" name="loginpushButton">
+        <property name="minimumSize">
+         <size>
+          <width>190</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>190</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
         <property name="text">
          <string>登录</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="registerpushButton">
-        <property name="text">
-         <string>注册</string>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <property name="spacing">
+         <number>40</number>
         </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="quitpushButton">
-        <property name="text">
-         <string>退出</string>
-        </property>
-       </widget>
+        <item>
+         <widget class="QPushButton" name="registerpushButton">
+          <property name="maximumSize">
+           <size>
+            <width>75</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 147, 221);
+background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>注册</string>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="quitpushButton">
+          <property name="maximumSize">
+           <size>
+            <width>75</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 147, 221);
+background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>退出</string>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </item>
    </layout>
   </widget>
+  <zorder>layoutWidget</zorder>
+  <zorder>label</zorder>
+  <zorder>pnlabel</zorder>
+  <zorder>pwdlabel</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="image.qrc"/>
+ </resources>
  <connections/>
 </ui>

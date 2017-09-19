@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ad_add_Dialog</class>
- <widget class="QDialog" name="ad_add_Dialog">
+ <class>ad_deletemenu_Dialog</class>
+ <widget class="QDialog" name="ad_deletemenu_Dialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,13 +11,38 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>添加账号</string>
+   <string>删除菜品</string>
   </property>
-  <widget class="QLabel" name="label_4">
+  <widget class="QPushButton" name="back_pushButton">
    <property name="geometry">
     <rect>
-     <x>26</x>
-     <y>156</y>
+     <x>-7</x>
+     <y>9</y>
+     <width>75</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>75</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>&lt;&lt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>105</y>
      <width>40</width>
      <height>20</height>
     </rect>
@@ -34,41 +59,75 @@
    <property name="text">
     <string>编号：</string>
    </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
   </widget>
-  <widget class="QPushButton" name="back_pushButton">
+  <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>-13</x>
-     <y>7</y>
-     <width>83</width>
+     <x>30</x>
+     <y>155</y>
+     <width>40</width>
      <height>20</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
+     <width>40</width>
      <height>20</height>
     </size>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(71, 143, 214);</string>
+   </property>
    <property name="text">
-    <string>&lt;&lt;</string>
+    <string>名称：</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>205</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>40</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(71, 143, 214);</string>
+   </property>
+   <property name="text">
+    <string>价格：</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>60</y>
+     <x>24</x>
+     <y>49</y>
      <width>192</width>
-     <height>212</height>
+     <height>232</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="spacing">
-     <number>15</number>
+     <number>20</number>
     </property>
     <item>
-     <widget class="QLineEdit" name="pnlineEdit">
+     <widget class="QComboBox" name="comboBox">
       <property name="minimumSize">
        <size>
         <width>190</width>
@@ -81,37 +140,26 @@
         <height>30</height>
        </size>
       </property>
-      <property name="text">
-       <string>请输入手机号</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="pwdlineEdit">
-      <property name="minimumSize">
-       <size>
-        <width>190</width>
-        <height>30</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>190</width>
-        <height>30</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>请输入密码</string>
-      </property>
-      <property name="echoMode">
-       <enum>QLineEdit::PasswordEchoOnEdit</enum>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
+      <item>
+       <property name="text">
+        <string>类别</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cold Dish</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Main Course</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Soup</string>
+       </property>
+      </item>
      </widget>
     </item>
     <item>
@@ -129,10 +177,7 @@
        </size>
       </property>
       <property name="text">
-       <string> 服务员和厨师需要编号</string>
-      </property>
-      <property name="echoMode">
-       <enum>QLineEdit::Normal</enum>
+       <string/>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -140,7 +185,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QComboBox" name="comboBox">
+     <widget class="QLineEdit" name="name_lineEdit">
       <property name="minimumSize">
        <size>
         <width>190</width>
@@ -153,35 +198,32 @@
         <height>30</height>
        </size>
       </property>
-      <item>
-       <property name="text">
-        <string>顾客</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>服务员</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>厨师</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>经理</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>系统管理员</string>
-       </property>
-      </item>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="add_pushButton">
+     <widget class="QLineEdit" name="price_lineEdit">
+      <property name="minimumSize">
+       <size>
+        <width>190</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>190</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="delete_pushButton">
       <property name="minimumSize">
        <size>
         <width>190</width>
@@ -195,60 +237,16 @@
        </size>
       </property>
       <property name="text">
-       <string>添加</string>
+       <string>删除菜品</string>
       </property>
      </widget>
     </item>
    </layout>
   </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>26</x>
-     <y>66</y>
-     <width>40</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>40</width>
-     <height>20</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(71, 143, 214);</string>
-   </property>
-   <property name="text">
-    <string>手机号：</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_6">
-   <property name="geometry">
-    <rect>
-     <x>26</x>
-     <y>111</y>
-     <width>40</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>40</width>
-     <height>20</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(71, 143, 214);</string>
-   </property>
-   <property name="text">
-    <string>密码：</string>
-   </property>
-  </widget>
   <zorder>layoutWidget</zorder>
   <zorder>back_pushButton</zorder>
-  <zorder>label_4</zorder>
-  <zorder>label_5</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
   <zorder>label_6</zorder>
  </widget>
  <resources/>

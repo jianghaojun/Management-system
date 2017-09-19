@@ -15,15 +15,6 @@ void Menu::deleteFood()
     Menulist.pop_back();
 }
 
-
-void Menu::getMenu()
-{
-    for(int i = 0; i < Menulist.size(); i++)
-    {
-        //cout<< i+1 << " " << Menulist[i].getName();
-    }
-}
-
 int Menu::getSum()
 {
     int sum = 0;

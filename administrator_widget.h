@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QDebug>
 #include <QMessageBox>
+#include <QHeaderView>
+#include <QCloseEvent>
 #include "account_list.h"
 #include "food.h"
 #include "menu_total.h"
@@ -23,16 +25,24 @@ public:
 private:
     Ui::Administrator_widget *ui;
 
+    void showaccount_part(QHash <QString, QString> hash);
+
+    void showaccount_part(QVector <Waiter> vector);
+
+    void showaccount_part(QVector <Chef> vector);
+
+    void clear_accountwidget();             //清楚显示账户表格中的内容
+
     void showmenu_part(QMultiHash <QString, Food> hash, QString food_type);
 
+    void closeEvent(QCloseEvent *event);    //关闭程序事件：在确认关闭时将数据上传
+
 private slots:
-    void widgetshow();   //自己显示
+    void widgetshow();                      //自己显示
 
     void on_back_pushButton_clicked();      //返回登录界面，并且把修改数据返回到本地数据库中去！！！！！！！！！！！！
 
-    void on_showC_pushButton_clicked();     //显示顾客账户
-
-    void on_showE_pushButton_clicked();     //显示雇员账户
+    void on_showaccount_pushButton_clicked();//显示账户   
 
     void on_search_pushButton_clicked();    //查询账户
 
@@ -62,6 +72,10 @@ signals:
     void ad_delete_dialogshow();         //删除账号界面显示
 
     void ad_searchmenu_dialogshow();     //查询菜品界面显示
+
+    void ad_addmenu_dialogshow();        //添加菜品界面显示
+
+    void ad_deletemenu_dialogshow();     //删除菜品界面显示
 
 };
 

@@ -1,14 +1,13 @@
-#include "ad_searchmenu_dialog.h"
-#include "ui_ad_searchmenu_dialog.h"
+#include "ad_addmenu_dialog.h"
+#include "ui_ad_addmenu_dialog.h"
 
-ad_searchmenu_Dialog::ad_searchmenu_Dialog(QWidget *parent) :
+ad_addmenu_Dialog::ad_addmenu_Dialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::ad_searchmenu_Dialog)
+    ui(new Ui::ad_addmenu_Dialog)
 {
     ui->setupUi(this);
-    ui->textEdit->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     //样式表
-    ui->search_pushButton->setStyleSheet("QPushButton"
+    ui->add_pushButton->setStyleSheet("QPushButton"
                                        "{"
                                        "border:2px groove white;"
                                        "border-radius:15px;"
@@ -22,12 +21,17 @@ ad_searchmenu_Dialog::ad_searchmenu_Dialog(QWidget *parent) :
                                        "border-style:inset;"
                                        "}");
 
-    ui->textEdit->setStyleSheet("border:2px groove gray;"
+    ui->name_lineEdit->setStyleSheet("border:2px groove gray;"
                                   "border-radius:15px;"
                                   "padding:2px 4px;"
                                   "color:rgb(160,160,160);");
 
     ui->id_lineEdit->setStyleSheet("border:2px groove gray;"
+                                   "border-radius:15px;"
+                                   "padding:2px 4px;"
+                                   "color:rgb(160,160,160);");
+
+    ui->price_lineEdit->setStyleSheet("border:2px groove gray;"
                                    "border-radius:15px;"
                                    "padding:2px 4px;"
                                    "color:rgb(160,160,160);");
@@ -64,39 +68,43 @@ ad_searchmenu_Dialog::ad_searchmenu_Dialog(QWidget *parent) :
                                        "border-style:inset;}");
 }
 
-ad_searchmenu_Dialog::~ad_searchmenu_Dialog()
+ad_addmenu_Dialog::~ad_addmenu_Dialog()
 {
     delete ui;
 }
 
-void ad_searchmenu_Dialog::dialogshow()
+void ad_addmenu_Dialog::dialogshow()
 {
     this->show();
 }
 
-void ad_searchmenu_Dialog::on_back_pushButton_clicked()
+void ad_addmenu_Dialog::on_back_pushButton_clicked()
 {
     this->hide();
     emit administrator_widgetshow();
 }
 
-void ad_searchmenu_Dialog::searchpart(QMultiHash<QString, Food> hash, QString food_type, int id)
+void ad_addmenu_Dialog::addpart(QMultiHash<QString, Food> &hash, QString food_type, int id, QString food_name,int food_price)
 {
-    if(search_food_id(hash, food_type, id))
+    if(search_food(hash, id, food_name))
     {
-        QString food_name = search_food_name(hash, food_type, id);
-        int food_price = search_food_price(hash, food_type, id);
-        QString Food_price = QString::number(food_price);
-        ui->textEdit->append("Name: " + food_name);
-        ui->textEdit->append("Price: " + Food_price);
+        QMessageBox::warning(this, tr("添加失败"), tr("菜品编号或名称重复"), QMessageBox::Ok);
+        ui->id_lineEdit->setFocus();
     }
     else
     {
-        ui->textEdit->append("Not Found!");
+        Food f(food_name, id, food_price);
+        hash.insert(food_type, f);
+        QMessageBox::information(this, tr("添加成功"), tr("添加成功"), QMessageBox::Ok);
+        ui->id_lineEdit->setFocus();
+        ui->id_lineEdit->clear();
+        ui->name_lineEdit->clear();
+        ui->price_lineEdit->clear();
+        //ui->textEdit->setText("结果：");
     }
 }
 
-void ad_searchmenu_Dialog::on_search_pushButton_clicked()  //查询相应的菜品
+void ad_addmenu_Dialog::on_add_pushButton_clicked()
 {
     QString s1 = "Cold Dish";
     QString s2 = "Main Course";
@@ -104,28 +112,32 @@ void ad_searchmenu_Dialog::on_search_pushButton_clicked()  //查询相应的菜�
 
     extern QMultiHash <QString, Food> Menu_total;
 
-    ui->textEdit->clear();
+    //ui->textEdit->clear();
 
-    if(ui->id_lineEdit->text().isEmpty() || ui->comboBox->currentText() == "类别")
+    if(ui->id_lineEdit->text().isEmpty() || ui->name_lineEdit->text().isEmpty()
+            || ui->price_lineEdit->text().isEmpty() || ui->comboBox->currentText() == "类别")
     {
-        QMessageBox::information(this, tr("查询失败"), tr("请输入菜品编号并选择类别！"), QMessageBox::Ok);
+        QMessageBox::information(this, tr("添加失败"), tr("请完整输入菜品信息（编号/菜名/价格/类别）"), QMessageBox::Ok);
         ui->id_lineEdit->setFocus();
     }
     else
     {
         int id = ui->id_lineEdit->text().toInt();
+        QString food_name = ui->name_lineEdit->text();
+        int food_price = ui->price_lineEdit->text().toInt();
 
         if(ui->comboBox->currentText() == s1)
         {
-            searchpart(Menu_total, s1, id);
+            addpart(Menu_total, s1, id, food_name, food_price);
         }
         else if(ui->comboBox->currentText() == s2)
         {
-            searchpart(Menu_total, s2, id);
+            addpart(Menu_total, s2, id, food_name, food_price);
         }
         else
         {
-            searchpart(Menu_total, s3, id);
+            addpart(Menu_total, s3, id, food_name, food_price);
         }
     }
 }
+

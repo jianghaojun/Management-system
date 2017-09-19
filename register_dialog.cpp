@@ -7,6 +7,35 @@ register_Dialog::register_Dialog(QWidget *parent) :
     ui(new Ui::register_Dialog)
 {
     ui->setupUi(this);
+    //样式表
+    ui->repushButton->setStyleSheet("QPushButton{"
+                                       "border:2px groove white;"
+                                       "border-radius:15px;"
+                                       "padding:2px 4px;"
+                                       "color:rgb(255,255,255);"
+                                       "background-color:rgb(0,147,221);}"
+                                       ""
+                                       "QPushButton:pressed{"
+                                       "background-color:rgb(0,170,255);"
+                                       "border-style:inset;}");
+
+    ui->pnlineEdit->setStyleSheet("border:2px groove gray;"
+                                  "border-radius:15px;"
+                                  "padding:2px 4px;"
+                                  "color:rgb(160,160,160);");
+
+    ui->pwdlineEdit->setStyleSheet("border:2px groove gray;"
+                                   "border-radius:15px;"
+                                   "padding:2px 4px;"
+                                   "color:rgb(160,160,160);");
+
+    ui->backpushButton->setStyleSheet("QPushButton{"
+                                          "border-style:hidden;"
+                                          "color:rgb(0,147,221);}"
+                                          ""
+                                          "QPushButton:pressed{"
+                                          "background-color:rgb(0,170,255);"
+                                          "border-style:inset;}");
 }
 
 register_Dialog::~register_Dialog()
@@ -28,7 +57,7 @@ void register_Dialog::registerpart(QHash<QString, QString> &hash, QString pn, QS
     else
     {
         hash.insert(pn, pwd);
-        showCaccount(hash);
+        //showCaccount(hash);
         QMessageBox::information(this, tr("注册成功"), tr("注册成功！"), QMessageBox::Ok);
         this->hide();
         emit login_dialogshow();
@@ -37,13 +66,14 @@ void register_Dialog::registerpart(QHash<QString, QString> &hash, QString pn, QS
 
 void register_Dialog::on_repushButton_clicked()    //注册按钮
 {
-    QString s1 = "顾客";
-    QString s2 = "服务员";
-    QString s3 = "厨师";
-    QString s4 = "经理";
-    QString s5 = "系统管理员";
+    //QString s1 = "顾客";
+    //QString s2 = "服务员";
+    //QString s3 = "厨师";
+    //QString s4 = "经理";
+    //QString s5 = "系统管理员";
+    //extern QHash <QString, QString> Employee;
+
     extern QHash <QString, QString> Customer;
-    extern QHash <QString, QString> Employee;
 
     if(ui->pnlineEdit->text().isEmpty() || ui->pwdlineEdit->text().isEmpty())
     {
@@ -56,6 +86,12 @@ void register_Dialog::on_repushButton_clicked()    //注册按钮
         QString pn = ui->pnlineEdit->text();
         QString pwd = ui->pwdlineEdit->text();
 
+        registerpart(Customer, pn, pwd);
+
+        //账号信息上传数据库
+        Customer_Upload(Customer);
+
+        /*
         if(ui->comboBox->currentText() == s1)
         {
             registerpart(Customer, pn, pwd);
@@ -81,8 +117,8 @@ void register_Dialog::on_repushButton_clicked()    //注册按钮
             registerpart(Employee, pn, pwd);
         }
 
-        Customer_Upload(Customer);
         Employee_Upload(Employee);
+        */
     }
 }
 

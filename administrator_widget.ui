@@ -6,378 +6,345 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>822</width>
+    <width>700</width>
     <height>584</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>系统管理员界面</string>
   </property>
-  <widget class="QStackedWidget" name="stackedWidget">
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>20</y>
-     <width>580</width>
-     <height>550</height>
+     <x>90</x>
+     <y>59</y>
+     <width>601</width>
+     <height>511</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>580</width>
-     <height>550</height>
+     <width>0</width>
+     <height>0</height>
     </size>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
    <property name="currentIndex">
     <number>0</number>
    </property>
-   <widget class="QWidget" name="page">
-    <widget class="QComboBox" name="comboBox">
+   <widget class="QWidget" name="tabWidgetPage1" native="true">
+    <attribute name="title">
+     <string>菜单管理</string>
+    </attribute>
+    <widget class="QWidget" name="">
      <property name="geometry">
       <rect>
-       <x>470</x>
-       <y>150</y>
-       <width>92</width>
-       <height>30</height>
+       <x>29</x>
+       <y>19</y>
+       <width>535</width>
+       <height>453</height>
       </rect>
      </property>
-     <property name="minimumSize">
-      <size>
-       <width>90</width>
-       <height>30</height>
-      </size>
-     </property>
-     <property name="editable">
-      <bool>false</bool>
-     </property>
-     <property name="sizeAdjustPolicy">
-      <enum>QComboBox::AdjustToContents</enum>
-     </property>
-     <item>
-      <property name="text">
-       <string>Cold Dish</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Main Course</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Soup</string>
-      </property>
-     </item>
-    </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>81</x>
-       <y>41</y>
-       <width>108</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font: 75 20pt &quot;Agency FB&quot;;
-font: 75 20pt &quot;华文楷体&quot;;</string>
-     </property>
-     <property name="text">
-      <string>菜单管理</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-    <widget class="QTableWidget" name="Menu_tableWidget">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>80</y>
-       <width>401</width>
-       <height>411</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>320</width>
-       <height>350</height>
-      </size>
-     </property>
-     <property name="editTriggers">
-      <set>QAbstractItemView::NoEditTriggers</set>
-     </property>
-     <property name="showGrid">
-      <bool>true</bool>
-     </property>
-     <column>
-      <property name="text">
-       <string>类别</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>编号（ID）</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>菜名</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>价格</string>
-      </property>
-     </column>
-    </widget>
-    <widget class="QPushButton" name="showmenu_pushButton">
-     <property name="geometry">
-      <rect>
-       <x>471</x>
-       <y>81</y>
-       <width>90</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>90</width>
-       <height>30</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>显示菜单</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="addfood_pushButton">
-     <property name="geometry">
-      <rect>
-       <x>471</x>
-       <y>291</y>
-       <width>90</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>90</width>
-       <height>30</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>增加菜品</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="searchfood_pushButton">
-     <property name="geometry">
-      <rect>
-       <x>471</x>
-       <y>221</y>
-       <width>90</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>90</width>
-       <height>30</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>查询菜品</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="deletefood_pushButton">
-     <property name="geometry">
-      <rect>
-       <x>471</x>
-       <y>361</y>
-       <width>90</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>90</width>
-       <height>30</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>删除菜品</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="uploadfood_pushButton">
-     <property name="geometry">
-      <rect>
-       <x>471</x>
-       <y>431</y>
-       <width>90</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>90</width>
-       <height>30</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>上传数据库</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="page_2">
-    <widget class="QWidget" name="layoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>70</x>
-       <y>50</y>
-       <width>436</width>
-       <height>456</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
       <property name="spacing">
        <number>40</number>
       </property>
       <item>
-       <widget class="QLabel" name="label_2">
-        <property name="styleSheet">
-         <string notr="true">font: 75 20pt &quot;Agency FB&quot;;
-font: 75 20pt &quot;华文楷体&quot;;</string>
+       <widget class="QTableWidget" name="Menu_tableWidget">
+        <property name="minimumSize">
+         <size>
+          <width>401</width>
+          <height>451</height>
+         </size>
         </property>
-        <property name="text">
-         <string>账户管理</string>
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
         </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
+        <property name="showGrid">
+         <bool>true</bool>
         </property>
+        <column>
+         <property name="text">
+          <string>类别</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>编号（ID）</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>菜名</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>价格</string>
+         </property>
+        </column>
        </widget>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
+       <layout class="QVBoxLayout" name="verticalLayout">
         <property name="spacing">
          <number>40</number>
         </property>
         <item>
-         <widget class="QTableWidget" name="Account_tableWidget">
+         <widget class="QComboBox" name="comboBox">
           <property name="minimumSize">
            <size>
-            <width>300</width>
-            <height>350</height>
+            <width>90</width>
+            <height>30</height>
            </size>
           </property>
-          <property name="editTriggers">
-           <set>QAbstractItemView::NoEditTriggers</set>
+          <property name="editable">
+           <bool>false</bool>
           </property>
-          <column>
+          <property name="sizeAdjustPolicy">
+           <enum>QComboBox::AdjustToContents</enum>
+          </property>
+          <item>
            <property name="text">
-            <string>用户类型</string>
+            <string>Cold Dish</string>
            </property>
-          </column>
-          <column>
+          </item>
+          <item>
            <property name="text">
-            <string>手机号</string>
+            <string>Main Course</string>
            </property>
-          </column>
-          <column>
+          </item>
+          <item>
            <property name="text">
-            <string>密码</string>
+            <string>Soup</string>
            </property>
-          </column>
+          </item>
          </widget>
         </item>
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout">
-          <property name="spacing">
-           <number>40</number>
+         <widget class="QPushButton" name="showmenu_pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>90</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>显示菜单</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="searchfood_pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>90</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>查询菜品</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="addfood_pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>90</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>增加菜品</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="deletefood_pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>90</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>删除菜品</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="uploadfood_pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>90</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>上传数据库</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tabWidgetPage2" native="true">
+    <attribute name="title">
+     <string>账户管理</string>
+    </attribute>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>29</x>
+       <y>18</y>
+       <width>535</width>
+       <height>453</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>40</number>
+      </property>
+      <item>
+       <widget class="QTableWidget" name="Account_tableWidget">
+        <property name="minimumSize">
+         <size>
+          <width>401</width>
+          <height>451</height>
+         </size>
+        </property>
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <column>
+         <property name="text">
+          <string>用户类型</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>手机号</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>密码</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <property name="spacing">
+         <number>40</number>
+        </property>
+        <item>
+         <widget class="QComboBox" name="comboBox_2">
+          <property name="minimumSize">
+           <size>
+            <width>90</width>
+            <height>30</height>
+           </size>
           </property>
           <item>
-           <widget class="QPushButton" name="showC_pushButton">
-            <property name="minimumSize">
-             <size>
-              <width>90</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>显示顾客账户</string>
-            </property>
-           </widget>
+           <property name="text">
+            <string>顾客</string>
+           </property>
           </item>
           <item>
-           <widget class="QPushButton" name="showE_pushButton">
-            <property name="minimumSize">
-             <size>
-              <width>90</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>显示雇员账户</string>
-            </property>
-           </widget>
+           <property name="text">
+            <string>服务员</string>
+           </property>
           </item>
           <item>
-           <widget class="QPushButton" name="search_pushButton">
-            <property name="minimumSize">
-             <size>
-              <width>90</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>查询账户</string>
-            </property>
-           </widget>
+           <property name="text">
+            <string>厨师</string>
+           </property>
           </item>
           <item>
-           <widget class="QPushButton" name="add_pushButton">
-            <property name="minimumSize">
-             <size>
-              <width>90</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>增加账户</string>
-            </property>
-           </widget>
+           <property name="text">
+            <string>经理</string>
+           </property>
           </item>
           <item>
-           <widget class="QPushButton" name="delete_pushButton">
-            <property name="minimumSize">
-             <size>
-              <width>90</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>删除账户</string>
-            </property>
-           </widget>
+           <property name="text">
+            <string>系统管理员</string>
+           </property>
           </item>
-          <item>
-           <widget class="QPushButton" name="upload_pushButton">
-            <property name="minimumSize">
-             <size>
-              <width>90</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>上传数据库</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="showaccount_pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>90</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>显示账户信息</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="search_pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>90</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>查询账户</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="add_pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>90</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>增加账户</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="delete_pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>90</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>删除账户</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="upload_pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>90</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>上传数据库</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -385,73 +352,136 @@ font: 75 20pt &quot;华文楷体&quot;;</string>
     </widget>
    </widget>
   </widget>
-  <widget class="QListWidget" name="listWidget">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>250</y>
-     <width>101</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <item>
-    <property name="text">
-     <string>菜单管理</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>账户管理</string>
-    </property>
-   </item>
-  </widget>
   <widget class="QPushButton" name="back_pushButton">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>550</y>
-     <width>75</width>
+     <x>10</x>
+     <y>14</y>
+     <width>60</width>
      <height>23</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
    <property name="text">
-    <string>注销</string>
+    <string>&lt;&lt;</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="black_label">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>30</y>
-     <width>121</width>
-     <height>101</height>
+     <x>0</x>
+     <y>0</y>
+     <width>81</width>
+     <height>601</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-image: url(:/image/images/customer.png);</string>
+    <string notr="true">background-color: rgb(57, 57, 57);</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="label_13">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>901</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(44, 90, 255, 230);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="lcdNumber">
+   <property name="geometry">
+    <rect>
+     <x>614</x>
+     <y>16</y>
+     <width>71</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>71</width>
+     <height>21</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>71</width>
+     <height>21</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(71, 143, 214);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="digitCount">
+    <number>8</number>
+   </property>
+   <property name="segmentStyle">
+    <enum>QLCDNumber::Flat</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_14">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>50</y>
+     <width>821</width>
+     <height>541</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(230, 230, 230);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>70</y>
+     <width>60</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="image.qrc">:/image/images/administrator.png</pixmap>
+   </property>
+  </widget>
+  <zorder>label_14</zorder>
+  <zorder>tabWidget</zorder>
+  <zorder>black_label</zorder>
+  <zorder>label_13</zorder>
+  <zorder>back_pushButton</zorder>
+  <zorder>lcdNumber</zorder>
+  <zorder>label_3</zorder>
  </widget>
- <resources/>
- <connections>
-  <connection>
-   <sender>listWidget</sender>
-   <signal>currentRowChanged(int)</signal>
-   <receiver>stackedWidget</receiver>
-   <slot>setCurrentIndex(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>117</x>
-     <y>256</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>202</x>
-     <y>114</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <resources>
+  <include location="image.qrc"/>
+ </resources>
+ <connections/>
 </ui>

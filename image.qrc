@@ -17,5 +17,18 @@
         <file>images/pay.png</file>
         <file>images/chef.png</file>
         <file>images/waiter1.png</file>
+        <file>images/manager.png</file>
+        <file>images/login_head.png</file>
+        <file>images/login_lock.png</file>
+        <file>images/login_people.png</file>
+        <file>images/arrow2.png</file>
+        <file>images/arrow.png</file>
+        <file>images/empty1_table.png</file>
+        <file>images/full1_table.png</file>
+        <file>images/cs_head.png</file>
+        <file>images/administrator.png</file>
+    </qresource>
+    <qresource prefix="/qss">
+        <file>login_dialog.qss</file>
     </qresource>
 </RCC>

@@ -3,8 +3,8 @@
 #include <iostream>
 using namespace std;
 
-Food::Food(QString fn, int id, int fp,  int fs, double fe):
-    food_name(fn), food_id(id), food_price(fp),  food_evaluation(fe), food_status(fs)
+Food::Food(QString fn, int id, int fp,  int fs, double fe, int ci):
+    food_name(fn), food_id(id), food_price(fp),  food_evaluation(fe), food_status(fs), chef_id(ci)
 {
 }
 
@@ -23,21 +23,15 @@ int Food::setFood_Status(int fs)
     return food_status;
 }
 
-int Food::getFood_Status()
+int Food::getFood_Status() const
 {
     return food_status;
 }
 
-double Food::getF_Evaluation()
+double Food::getF_Evaluation() const
 {
     return food_evaluation;
 }
-
-void Food::showF_Evaluation()
-{
-    cout<<fixed<<setprecision(2)<<food_evaluation<<endl;
-}
-
 
 double Food::setF_Evaluation(double fe)
 {
@@ -49,17 +43,28 @@ double Food::setF_Evaluation(double fe)
     return food_evaluation;
 }
 
-int Food::getPrice()
+int Food::getChef_id() const
+{
+    return chef_id;
+}
+
+int Food::setChef_id(int id)
+{
+    chef_id = id;
+    return chef_id;
+}
+
+int Food::getPrice() const
 {
     return food_price;
 }
 
-int Food::getID()
+int Food::getID() const
 {
     return food_id;
 }
 
-QString Food::getName()
+QString Food::getName() const
 {
     return food_name;
 }

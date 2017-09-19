@@ -8,7 +8,7 @@
 class employee
 {
 public:
-    employee(int id, int e = 0, int c = 0, int s = 0);
+    employee(int id, QString pn, QString pwd,int e = 0, int c = 0, double s = 0);
     employee(){}
 
     int get_Id() const;
@@ -16,17 +16,21 @@ public:
     double get_Evaluation() const;
     virtual double set_Evaluation(double e);
 
-    //void show_Evaluation() const;
-    //int get_Status() const;
-    //int set_Status(int s);
+    int get_Count() const;
+    double get_Sum() const;
+
+    QString get_Employee_pn() const;
+    QString get_Employee_pwd() const;
 
 protected:
     int id;
     double evaluation;        //评分0-5分
     int count;                //记录评价的次数
-    int sum;                  //记录评分总和
-    //int status;             //当前状态 0->空闲  其他整数代表服务的桌号
+    double sum;                  //记录评分总和
 
+private:
+    QString employee_pn;      //雇员个人的手机号
+    QString employee_pwd;     //雇员密码
 };
 
 
@@ -35,7 +39,7 @@ protected:
 class Waiter : public employee
 {
 public:
-    Waiter(int id, int e = 0, int c = 0, int s = 0, int wt = 0);
+    Waiter(int id, QString pn, QString pwd, int e = 0, int c = 0, double s = 0, int wt = 0);
     Waiter(){}
 
     virtual double set_Evaluation(int table_id,double e);
@@ -48,7 +52,6 @@ public:
 private:
     int waiter_table_id;                     //服务的桌号
 
-
 };
 
 
@@ -57,7 +60,7 @@ private:
 class Chef : public employee
 {
 public:
-    Chef(int id, int e = 0, int c = 0, int s = 0);
+    Chef(int id, QString pn, QString pwd,int e = 0, int c = 0, double s = 0);
     Chef(){}
 
     virtual double set_Evaluation(int food_id,double e);

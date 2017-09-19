@@ -20,14 +20,21 @@ public:
 private:
     Ui::ad_add_Dialog *ui;
 
-    void addpart(QHash <QString, QString> &hash, QString pn, QString pwd);   //添加按钮的部分代码，模块化
-
 private slots:
     void dialogshow();                 //自己界面显示
 
     void on_back_pushButton_clicked(); //返回到系统管理员界面
 
+    void addpart(QHash <QString, QString> &hash, QString pn, QString pwd);   //添加按钮的部分代码，模块化
+
+    void addpart(QVector <Waiter> &vector, int id, QString pn, QString pwd);   //添加按钮的部分代码，模块化
+
+    void addpart(QVector <Chef> &vector, int id, QString pn, QString pwd);   //添加按钮的部分代码，模块化
+
     void on_add_pushButton_clicked();  //添加账户
+
+
+
 
 signals:
     void administrator_widgetshow();  //系统管理员的界面显示

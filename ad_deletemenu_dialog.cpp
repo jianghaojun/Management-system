@@ -1,14 +1,13 @@
-#include "ad_searchmenu_dialog.h"
-#include "ui_ad_searchmenu_dialog.h"
+#include "ad_deletemenu_dialog.h"
+#include "ui_ad_deletemenu_dialog.h"
 
-ad_searchmenu_Dialog::ad_searchmenu_Dialog(QWidget *parent) :
+ad_deletemenu_Dialog::ad_deletemenu_Dialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::ad_searchmenu_Dialog)
+    ui(new Ui::ad_deletemenu_Dialog)
 {
     ui->setupUi(this);
-    ui->textEdit->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     //样式表
-    ui->search_pushButton->setStyleSheet("QPushButton"
+    ui->delete_pushButton->setStyleSheet("QPushButton"
                                        "{"
                                        "border:2px groove white;"
                                        "border-radius:15px;"
@@ -22,12 +21,17 @@ ad_searchmenu_Dialog::ad_searchmenu_Dialog(QWidget *parent) :
                                        "border-style:inset;"
                                        "}");
 
-    ui->textEdit->setStyleSheet("border:2px groove gray;"
+    ui->name_lineEdit->setStyleSheet("border:2px groove gray;"
                                   "border-radius:15px;"
                                   "padding:2px 4px;"
                                   "color:rgb(160,160,160);");
 
     ui->id_lineEdit->setStyleSheet("border:2px groove gray;"
+                                   "border-radius:15px;"
+                                   "padding:2px 4px;"
+                                   "color:rgb(160,160,160);");
+
+    ui->price_lineEdit->setStyleSheet("border:2px groove gray;"
                                    "border-radius:15px;"
                                    "padding:2px 4px;"
                                    "color:rgb(160,160,160);");
@@ -64,39 +68,42 @@ ad_searchmenu_Dialog::ad_searchmenu_Dialog(QWidget *parent) :
                                        "border-style:inset;}");
 }
 
-ad_searchmenu_Dialog::~ad_searchmenu_Dialog()
+ad_deletemenu_Dialog::~ad_deletemenu_Dialog()
 {
     delete ui;
 }
 
-void ad_searchmenu_Dialog::dialogshow()
+void ad_deletemenu_Dialog::dialogshow()
 {
     this->show();
 }
 
-void ad_searchmenu_Dialog::on_back_pushButton_clicked()
+void ad_deletemenu_Dialog::on_back_pushButton_clicked()
 {
     this->hide();
     emit administrator_widgetshow();
 }
 
-void ad_searchmenu_Dialog::searchpart(QMultiHash<QString, Food> hash, QString food_type, int id)
+void ad_deletemenu_Dialog::deletepart(QMultiHash<QString, Food> &hash, QString food_type, int id, QString food_name, int food_price)
 {
     if(search_food_id(hash, food_type, id))
     {
-        QString food_name = search_food_name(hash, food_type, id);
-        int food_price = search_food_price(hash, food_type, id);
-        QString Food_price = QString::number(food_price);
-        ui->textEdit->append("Name: " + food_name);
-        ui->textEdit->append("Price: " + Food_price);
+        Food f(food_name, id, food_price);
+        hash.remove(food_type, f);
+        QMessageBox::information(this, tr("删除成功"), tr("成功删除"), QMessageBox::Ok);
+        ui->id_lineEdit->clear();
+        ui->name_lineEdit->clear();
+        ui->price_lineEdit->clear();
+        //ui->textEdit->setText("结果：");
     }
     else
     {
-        ui->textEdit->append("Not Found!");
+        QMessageBox::warning(this, tr("删除失败"), tr("在该分类中不存在相同编号的菜品"), QMessageBox::Ok);
+        ui->id_lineEdit->setFocus();
     }
 }
 
-void ad_searchmenu_Dialog::on_search_pushButton_clicked()  //查询相应的菜品
+void ad_deletemenu_Dialog::on_delete_pushButton_clicked()
 {
     QString s1 = "Cold Dish";
     QString s2 = "Main Course";
@@ -104,28 +111,31 @@ void ad_searchmenu_Dialog::on_search_pushButton_clicked()  //查询相应的菜�
 
     extern QMultiHash <QString, Food> Menu_total;
 
-    ui->textEdit->clear();
+    //ui->textEdit->clear();
 
-    if(ui->id_lineEdit->text().isEmpty() || ui->comboBox->currentText() == "类别")
+    if(ui->id_lineEdit->text().isEmpty() || ui->name_lineEdit->text().isEmpty()
+            || ui->price_lineEdit->text().isEmpty() || ui->comboBox->currentText() == "类别")
     {
-        QMessageBox::information(this, tr("查询失败"), tr("请输入菜品编号并选择类别！"), QMessageBox::Ok);
+        QMessageBox::information(this, tr("删除失败"), tr("请完整输入菜品信息（编号/菜名/价格/类别）"), QMessageBox::Ok);
         ui->id_lineEdit->setFocus();
     }
     else
     {
         int id = ui->id_lineEdit->text().toInt();
+        QString food_name = ui->name_lineEdit->text();
+        int food_price = ui->price_lineEdit->text().toInt();
 
         if(ui->comboBox->currentText() == s1)
         {
-            searchpart(Menu_total, s1, id);
+            deletepart(Menu_total, s1, id, food_name, food_price);
         }
         else if(ui->comboBox->currentText() == s2)
         {
-            searchpart(Menu_total, s2, id);
+            deletepart(Menu_total, s2, id, food_name, food_price);
         }
         else
         {
-            searchpart(Menu_total, s3, id);
+            deletepart(Menu_total, s3, id, food_name, food_price);
         }
     }
 }

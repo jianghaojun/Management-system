@@ -8,5 +8,4 @@
 
 void createdatabase();  //创建数据库连接
 
-
 #endif // DATABASE_H

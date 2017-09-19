@@ -6,37 +6,161 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>300</width>
-    <height>300</height>
+    <width>240</width>
+    <height>330</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>新用户注册</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>87</x>
+     <y>22</y>
+     <width>60</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>60</width>
+     <height>60</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>60</width>
+     <height>60</height>
+    </size>
+   </property>
+   <property name="sizeIncrement">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 14pt &quot;Arial&quot;;
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="image.qrc">:/image/images/login_head.png</pixmap>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pwdlabel">
+   <property name="geometry">
+    <rect>
+     <x>29</x>
+     <y>173</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="image.qrc">:/image/images/login_lock.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pnlabel">
+   <property name="geometry">
+    <rect>
+     <x>29</x>
+     <y>113</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="sizeIncrement">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="image.qrc">:/image/images/login_people.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="backpushButton">
+   <property name="geometry">
+    <rect>
+     <x>-6</x>
+     <y>6</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;&lt;</string>
+   </property>
+  </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>20</y>
-     <width>195</width>
-     <height>249</height>
+     <x>22</x>
+     <y>97</y>
+     <width>192</width>
+     <height>172</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_3">
+   <layout class="QVBoxLayout" name="verticalLayout">
     <property name="spacing">
-     <number>30</number>
-    </property>
-    <property name="sizeConstraint">
-     <enum>QLayout::SetDefaultConstraint</enum>
+     <number>20</number>
     </property>
     <item>
-     <widget class="QLabel" name="label">
-      <property name="styleSheet">
-       <string notr="true">font: 12pt &quot;Arial&quot;;
-font: 75 20pt &quot;Arial&quot;;</string>
+     <widget class="QLineEdit" name="pnlineEdit">
+      <property name="minimumSize">
+       <size>
+        <width>190</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>190</width>
+        <height>30</height>
+       </size>
       </property>
       <property name="text">
-       <string>新用户注册</string>
+       <string>请输入手机号</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -44,121 +168,59 @@ font: 75 20pt &quot;Arial&quot;;</string>
      </widget>
     </item>
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <property name="spacing">
-       <number>30</number>
+     <widget class="QLineEdit" name="pwdlineEdit">
+      <property name="minimumSize">
+       <size>
+        <width>190</width>
+        <height>30</height>
+       </size>
       </property>
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <property name="spacing">
-         <number>30</number>
-        </property>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout">
-          <item>
-           <widget class="QLabel" name="label_3">
-            <property name="text">
-             <string>手机号：</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="pnlineEdit"/>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <item>
-           <widget class="QLabel" name="label_4">
-            <property name="text">
-             <string>新密码：</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="pwdlineEdit">
-            <property name="echoMode">
-             <enum>QLineEdit::PasswordEchoOnEdit</enum>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
-          <property name="spacing">
-           <number>10</number>
-          </property>
-          <item>
-           <widget class="QLabel" name="label_2">
-            <property name="text">
-             <string>身份为：</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QComboBox" name="comboBox">
-            <property name="currentText">
-             <string>顾客</string>
-            </property>
-            <item>
-             <property name="text">
-              <string>顾客</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>服务员</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>厨师</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>经理</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>系统管理员</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-         </layout>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_4">
-        <property name="spacing">
-         <number>30</number>
-        </property>
-        <item>
-         <widget class="QPushButton" name="repushButton">
-          <property name="text">
-           <string>注册</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="backpushButton">
-          <property name="text">
-           <string>返回</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
+      <property name="maximumSize">
+       <size>
+        <width>190</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>请输入密码:</string>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="repushButton">
+      <property name="minimumSize">
+       <size>
+        <width>190</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>190</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>注册</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
+  <zorder>backpushButton</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>label</zorder>
+  <zorder>pnlabel</zorder>
+  <zorder>pwdlabel</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="image.qrc"/>
+ </resources>
  <connections/>
 </ui>

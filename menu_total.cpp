@@ -10,7 +10,7 @@
 //系统管理员管理的总菜单 Menu_total;
 
 //总菜单的初始化，写在头文件中免得main.cpp中代码过多
-void menu_set(QMultiHash <QString, Food> &hash)
+void Menu_set(QMultiHash <QString, Food> &hash)
 {
     QSqlDatabase db = QSqlDatabase::database("DB");
     db.setDatabaseName("database.db");
@@ -61,14 +61,50 @@ void menu_set(QMultiHash <QString, Food> &hash)
     */
 }
 
-void menu_replace(QMultiHash <QString, Food> &hash, QString type, Food oldf, Food newf)
+void Menu_upload(QMultiHash<QString, Food> hash)
+{
+    QSqlDatabase db = QSqlDatabase::database("DB");
+    db.setDatabaseName("database.db");
+    if(!db.open())
+    {
+        QMessageBox::critical(0,"Cannot open the database!",
+            "Unable to establish a database connection.", QMessageBox::Cancel);
+    }
+
+    QSqlQuery query(db);
+    query.exec("delete from menu_total");
+
+    QHash<QString, Food>::const_iterator i = hash.constBegin();
+    while(i != hash.constEnd())
+    {
+        QString food_type = i.key();
+        Food f = i.value();
+
+        int id = f.getID();
+        QString food_name = f.getName();
+        int food_price = f.getPrice();
+        double food_evaluation = f.getF_Evaluation();
+
+        query.prepare("insert into menu_total(id, food_type, food_name, food_price,"
+                      "food_evaluation) values(?, ?, ?, ?, ?)");
+        query.addBindValue(id);
+        query.addBindValue(food_type);
+        query.addBindValue(food_name);
+        query.addBindValue(food_price);
+        query.addBindValue(food_evaluation);
+        query.exec();
+        ++i;
+    }
+}
+
+void Menu_replace(QMultiHash <QString, Food> &hash, QString type, Food oldf, Food newf)
 {
     hash.remove(type, oldf);
     hash.insert(type, newf);
     //cout<<"Succeed!"<<endl;
 }
 
-void menu_show(QMultiHash <QString, Food> hash)
+void Menu_show(QMultiHash <QString, Food> hash)
 {
     /*
     QMultiHash<QString, Food>::iterator i = hash.begin();
@@ -170,38 +206,3 @@ QString search_food_name(QMultiHash<QString, Food> hash, QString food_type, int 
     return s;
 }
 
-void menu_upload(QMultiHash<QString, Food> hash)
-{
-    QSqlDatabase db = QSqlDatabase::database("DB");
-    db.setDatabaseName("database.db");
-    if(!db.open())
-    {
-        QMessageBox::critical(0,"Cannot open the database!",
-            "Unable to establish a database connection.", QMessageBox::Cancel);
-    }
-
-    QSqlQuery query(db);
-    query.exec("delete from menu_total");
-
-    QHash<QString, Food>::const_iterator i = hash.constBegin();
-    while(i != hash.constEnd())
-    {
-        QString food_type = i.key();
-        Food f = i.value();
-
-        int id = f.getID();
-        QString food_name = f.getName();
-        int food_price = f.getPrice();
-        double food_evaluation = f.getF_Evaluation();
-
-        query.prepare("insert into menu_total(id, food_type, food_name, food_price,"
-                      "food_evaluation) values(?, ?, ?, ?, ?)");
-        query.addBindValue(id);
-        query.addBindValue(food_type);
-        query.addBindValue(food_name);
-        query.addBindValue(food_price);
-        query.addBindValue(food_evaluation);
-        query.exec();
-        ++i;
-    }
-}

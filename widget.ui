@@ -13,135 +13,53 @@
   <property name="windowTitle">
    <string>欢迎光临天一阁餐厅</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
   <widget class="QPushButton" name="back_pushButton">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>60</y>
+     <x>2</x>
+     <y>13</y>
      <width>75</width>
      <height>23</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <property name="text">
-    <string>注销</string>
+    <string>&lt;&lt;</string>
    </property>
   </widget>
   <widget class="QPushButton" name="order_pushButton">
    <property name="geometry">
     <rect>
-     <x>640</x>
-     <y>30</y>
+     <x>431</x>
+     <y>63</y>
      <width>75</width>
      <height>23</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>下单</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>280</x>
-     <y>30</y>
-     <width>71</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(55, 81, 255);
-color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string>当前桌号：</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="tablenumber_label">
-   <property name="geometry">
-    <rect>
-     <x>370</x>
-     <y>30</y>
-     <width>71</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(55, 81, 255);
-color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>10</y>
-     <width>60</width>
-     <height>60</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="image.qrc">:/image/images/customer2.png</pixmap>
-   </property>
-  </widget>
-  <widget class="QLabel" name="welcome_label">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>30</y>
-     <width>161</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 0);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="fee_label">
-   <property name="geometry">
-    <rect>
-     <x>550</x>
-     <y>30</y>
-     <width>71</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(85, 255, 0);</string>
-   </property>
-   <property name="text">
-    <string>￥</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
   <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>90</y>
-     <width>611</width>
-     <height>500</height>
+     <x>82</x>
+     <y>79</y>
+     <width>581</width>
+     <height>501</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(255, 255, 255);
-alternate-background-color: rgb(255, 85, 0);</string>
+</string>
    </property>
    <property name="tabPosition">
     <enum>QTabWidget::North</enum>
@@ -156,400 +74,423 @@ alternate-background-color: rgb(255, 85, 0);</string>
     <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>9</x>
-       <y>9</y>
-       <width>62</width>
-       <height>91</height>
+       <x>3</x>
+       <y>21</y>
+       <width>568</width>
+       <height>410</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <widget class="QLabel" name="A1_label">
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
+     <layout class="QGridLayout" name="gridLayout">
+      <property name="verticalSpacing">
+       <number>30</number>
+      </property>
+      <item row="0" column="0">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <property name="spacing">
+         <number>30</number>
         </property>
-        <property name="maximumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-image: url(:/image/images/empty_table.png);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap resource="image.qrc">:/image/images/empty_table.png</pixmap>
-        </property>
-       </widget>
+        <item>
+         <widget class="QLabel" name="A1_label">
+          <property name="minimumSize">
+           <size>
+            <width>135</width>
+            <height>127</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>135</width>
+            <height>127</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-image: url(:/image/images/empty_table.png);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="image.qrc">:/image/images/empty1_table.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="A1_pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>135</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>135</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>上座01</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
-      <item>
-       <widget class="QPushButton" name="A1_pushButton">
-        <property name="maximumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
+      <item row="0" column="1">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <property name="spacing">
+         <number>30</number>
         </property>
-        <property name="text">
-         <string>上座01</string>
-        </property>
-       </widget>
+        <item>
+         <widget class="QLabel" name="A2_label">
+          <property name="minimumSize">
+           <size>
+            <width>135</width>
+            <height>127</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>135</width>
+            <height>127</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-image: url(:/image/images/empty_table.png);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="image.qrc">:/image/images/empty1_table.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="A2_pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>135</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>135</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>上座02</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
-     </layout>
-    </widget>
-    <widget class="QWidget" name="layoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>165</x>
-       <y>9</y>
-       <width>62</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <widget class="QLabel" name="A2_label">
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
+      <item row="0" column="2">
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <property name="spacing">
+         <number>30</number>
         </property>
-        <property name="maximumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-image: url(:/image/images/empty_table.png);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap resource="image.qrc">:/image/images/empty_table.png</pixmap>
-        </property>
-       </widget>
+        <item>
+         <widget class="QLabel" name="A3_label">
+          <property name="minimumSize">
+           <size>
+            <width>135</width>
+            <height>127</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>135</width>
+            <height>127</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-image: url(:/image/images/empty_table.png);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="image.qrc">:/image/images/empty1_table.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="A3_pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>135</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>135</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>上座03</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
-      <item>
-       <widget class="QPushButton" name="A2_pushButton">
-        <property name="maximumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
+      <item row="0" column="3">
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <property name="spacing">
+         <number>30</number>
         </property>
-        <property name="text">
-         <string>上座02</string>
-        </property>
-       </widget>
+        <item>
+         <widget class="QLabel" name="A4_label">
+          <property name="minimumSize">
+           <size>
+            <width>135</width>
+            <height>127</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>135</width>
+            <height>127</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-image: url(:/image/images/empty_table.png);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="image.qrc">:/image/images/empty1_table.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="A4_pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>135</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>145</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>上座04</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
-     </layout>
-    </widget>
-    <widget class="QWidget" name="layoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>476</x>
-       <y>9</y>
-       <width>62</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_4">
-      <item>
-       <widget class="QLabel" name="A4_label">
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
+      <item row="1" column="0">
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <property name="spacing">
+         <number>30</number>
         </property>
-        <property name="maximumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-image: url(:/image/images/empty_table.png);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap resource="image.qrc">:/image/images/empty_table.png</pixmap>
-        </property>
-       </widget>
+        <item>
+         <widget class="QLabel" name="A5_label">
+          <property name="minimumSize">
+           <size>
+            <width>135</width>
+            <height>127</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>135</width>
+            <height>127</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-image: url(:/image/images/empty_table.png);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="image.qrc">:/image/images/empty1_table.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="A5_pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>135</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>145</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>上座05</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
-      <item>
-       <widget class="QPushButton" name="A4_pushButton">
-        <property name="maximumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
+      <item row="1" column="1">
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <property name="spacing">
+         <number>30</number>
         </property>
-        <property name="text">
-         <string>上座04</string>
-        </property>
-       </widget>
+        <item>
+         <widget class="QLabel" name="A6_label">
+          <property name="minimumSize">
+           <size>
+            <width>135</width>
+            <height>127</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>135</width>
+            <height>127</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-image: url(:/image/images/empty_table.png);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="image.qrc">:/image/images/empty1_table.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="A6_pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>135</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>145</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>上座06</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
-     </layout>
-    </widget>
-    <widget class="QWidget" name="layoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>9</x>
-       <y>241</y>
-       <width>62</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_5">
-      <item>
-       <widget class="QLabel" name="A5_label">
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
+      <item row="1" column="2">
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <property name="spacing">
+         <number>30</number>
         </property>
-        <property name="maximumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-image: url(:/image/images/empty_table.png);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap resource="image.qrc">:/image/images/empty_table.png</pixmap>
-        </property>
-       </widget>
+        <item>
+         <widget class="QLabel" name="A7_label">
+          <property name="minimumSize">
+           <size>
+            <width>135</width>
+            <height>127</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>135</width>
+            <height>127</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-image: url(:/image/images/empty_table.png);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="image.qrc">:/image/images/empty1_table.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="A7_pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>135</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>145</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>上座07</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
-      <item>
-       <widget class="QPushButton" name="A5_pushButton">
-        <property name="maximumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
+      <item row="1" column="3">
+       <layout class="QVBoxLayout" name="verticalLayout_8">
+        <property name="spacing">
+         <number>30</number>
         </property>
-        <property name="text">
-         <string>上座05</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QWidget" name="layoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>165</x>
-       <y>241</y>
-       <width>62</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_6">
-      <item>
-       <widget class="QLabel" name="A6_label">
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-image: url(:/image/images/empty_table.png);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap resource="image.qrc">:/image/images/empty_table.png</pixmap>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="A6_pushButton">
-        <property name="maximumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>上座06</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QWidget" name="layoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>321</x>
-       <y>241</y>
-       <width>62</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_7">
-      <item>
-       <widget class="QLabel" name="A7_label">
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-image: url(:/image/images/empty_table.png);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap resource="image.qrc">:/image/images/empty_table.png</pixmap>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="A7_pushButton">
-        <property name="maximumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>上座07</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QWidget" name="layoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>476</x>
-       <y>241</y>
-       <width>62</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_8">
-      <item>
-       <widget class="QLabel" name="A8_label">
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-image: url(:/image/images/empty_table.png);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap resource="image.qrc">:/image/images/empty_table.png</pixmap>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="A8_pushButton">
-        <property name="maximumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>上座08</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QWidget" name="layoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>322</x>
-       <y>10</y>
-       <width>62</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_3">
-      <item>
-       <widget class="QLabel" name="A3_label">
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-image: url(:/image/images/empty_table.png);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap resource="image.qrc">:/image/images/empty_table.png</pixmap>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="A3_pushButton">
-        <property name="maximumSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>上座03</string>
-        </property>
-       </widget>
+        <item>
+         <widget class="QLabel" name="A8_label">
+          <property name="minimumSize">
+           <size>
+            <width>135</width>
+            <height>127</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>135</width>
+            <height>127</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-image: url(:/image/images/empty_table.png);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="image.qrc">:/image/images/empty1_table.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="A8_pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>135</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>145</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>上座08</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </widget>
@@ -563,7 +504,7 @@ alternate-background-color: rgb(255, 85, 0);</string>
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>611</width>
+       <width>571</width>
        <height>481</height>
       </rect>
      </property>
@@ -615,8 +556,8 @@ alternate-background-color: rgb(255, 85, 0);</string>
   <widget class="QPushButton" name="water_pushButton">
    <property name="geometry">
     <rect>
-     <x>640</x>
-     <y>60</y>
+     <x>3</x>
+     <y>237</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -628,8 +569,8 @@ alternate-background-color: rgb(255, 85, 0);</string>
   <widget class="QPushButton" name="hurry_pushButton">
    <property name="geometry">
     <rect>
-     <x>720</x>
-     <y>60</y>
+     <x>3</x>
+     <y>300</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -638,29 +579,12 @@ alternate-background-color: rgb(255, 85, 0);</string>
     <string>催菜</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>460</x>
-     <y>30</y>
-     <width>71</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 255, 0);
-color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string>当前金额：</string>
-   </property>
-  </widget>
   <widget class="QTabWidget" name="tabWidget_2">
    <property name="geometry">
     <rect>
-     <x>630</x>
-     <y>90</y>
-     <width>261</width>
+     <x>660</x>
+     <y>78</y>
+     <width>231</width>
      <height>500</height>
     </rect>
    </property>
@@ -679,7 +603,7 @@ color: rgb(255, 255, 255);</string>
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>251</width>
+       <width>225</width>
        <height>481</height>
       </rect>
      </property>
@@ -721,7 +645,7 @@ color: rgb(255, 255, 255);</string>
      </property>
      <column>
       <property name="text">
-       <string>菜名</string>
+       <string>项目</string>
       </property>
      </column>
      <column>
@@ -735,8 +659,8 @@ color: rgb(255, 255, 255);</string>
   <widget class="QPushButton" name="pay_pushButton">
    <property name="geometry">
     <rect>
-     <x>800</x>
-     <y>30</y>
+     <x>540</x>
+     <y>63</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -754,6 +678,9 @@ color: rgb(255, 255, 255);</string>
      <height>23</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <property name="text">
     <string>提交评价</string>
    </property>
@@ -761,8 +688,8 @@ color: rgb(255, 255, 255);</string>
   <widget class="QPushButton" name="query_pushButton">
    <property name="geometry">
     <rect>
-     <x>720</x>
-     <y>30</y>
+     <x>3</x>
+     <y>174</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -774,8 +701,8 @@ color: rgb(255, 255, 255);</string>
   <widget class="QPushButton" name="querytable_pushButton">
    <property name="geometry">
     <rect>
-     <x>550</x>
-     <y>60</y>
+     <x>3</x>
+     <y>111</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -784,6 +711,281 @@ color: rgb(255, 255, 255);</string>
     <string>查询餐桌</string>
    </property>
   </widget>
+  <widget class="QLabel" name="black_label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>81</width>
+     <height>601</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(57, 57, 57);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>580</y>
+     <width>821</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(66, 66, 66);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>901</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(44, 90, 255, 230);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pn_label">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>14</y>
+     <width>100</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>100</width>
+     <height>21</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>100</width>
+     <height>21</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pn_label_2">
+   <property name="geometry">
+    <rect>
+     <x>142</x>
+     <y>16</y>
+     <width>48</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(44, 90, 255);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>手机号：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="tablenumber_label_2">
+   <property name="geometry">
+    <rect>
+     <x>332</x>
+     <y>17</y>
+     <width>60</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(44, 90, 255);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>当前桌号：</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="tablenumber_label">
+   <property name="geometry">
+    <rect>
+     <x>402</x>
+     <y>14</y>
+     <width>100</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>100</width>
+     <height>21</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>100</width>
+     <height>21</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>534</x>
+     <y>17</y>
+     <width>60</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(44, 90, 255);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>当前金额：</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="fee_label">
+   <property name="geometry">
+    <rect>
+     <x>604</x>
+     <y>14</y>
+     <width>100</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>100</width>
+     <height>21</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>100</width>
+     <height>21</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>￥</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>50</y>
+     <width>821</width>
+     <height>541</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(230, 230, 230);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="lcdNumber">
+   <property name="geometry">
+    <rect>
+     <x>807</x>
+     <y>14</y>
+     <width>71</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>71</width>
+     <height>21</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>71</width>
+     <height>21</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(71, 143, 214);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="digitCount">
+    <number>8</number>
+   </property>
+   <property name="segmentStyle">
+    <enum>QLCDNumber::Flat</enum>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>black_label</zorder>
+  <zorder>label_5</zorder>
+  <zorder>label_6</zorder>
+  <zorder>tabWidget</zorder>
+  <zorder>pay_pushButton</zorder>
+  <zorder>back_pushButton</zorder>
+  <zorder>water_pushButton</zorder>
+  <zorder>order_pushButton</zorder>
+  <zorder>submit_pushButton</zorder>
+  <zorder>query_pushButton</zorder>
+  <zorder>querytable_pushButton</zorder>
+  <zorder>hurry_pushButton</zorder>
+  <zorder>tabWidget_2</zorder>
+  <zorder>pn_label</zorder>
+  <zorder>pn_label_2</zorder>
+  <zorder>tablenumber_label_2</zorder>
+  <zorder>tablenumber_label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>fee_label</zorder>
+  <zorder>lcdNumber</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ad_search_Dialog</class>
- <widget class="QDialog" name="ad_search_Dialog">
+ <class>ad_addmenu_Dialog</class>
+ <widget class="QDialog" name="ad_addmenu_Dialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,53 +11,46 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>查询账号</string>
+   <string>添加菜品</string>
   </property>
   <widget class="QPushButton" name="back_pushButton">
    <property name="geometry">
     <rect>
-     <x>-7</x>
-     <y>10</y>
+     <x>-6</x>
+     <y>9</y>
      <width>75</width>
-     <height>23</height>
+     <height>20</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>75</width>
+     <height>20</height>
+    </size>
    </property>
    <property name="text">
     <string>&lt;&lt;</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>23</x>
-     <y>62</y>
+     <x>24</x>
+     <y>53</y>
      <width>192</width>
-     <height>212</height>
+     <height>232</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="spacing">
-     <number>15</number>
+     <number>20</number>
     </property>
-    <item>
-     <widget class="QLineEdit" name="pnlineEdit">
-      <property name="minimumSize">
-       <size>
-        <width>190</width>
-        <height>30</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>190</width>
-        <height>30</height>
-       </size>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
     <item>
      <widget class="QComboBox" name="comboBox">
       <property name="minimumSize">
@@ -74,41 +67,28 @@
       </property>
       <item>
        <property name="text">
-        <string>身份</string>
+        <string>类别</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>顾客</string>
+        <string>Cold Dish</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>服务员</string>
+        <string>Main Course</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>厨师</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>经理</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>系统管理员</string>
+        <string>Soup</string>
        </property>
       </item>
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="result_label">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
+     <widget class="QLineEdit" name="id_lineEdit">
       <property name="minimumSize">
        <size>
         <width>190</width>
@@ -120,12 +100,6 @@
         <width>190</width>
         <height>30</height>
        </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
       </property>
       <property name="text">
        <string/>
@@ -136,7 +110,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="pwd_label">
+     <widget class="QLineEdit" name="name_lineEdit">
       <property name="minimumSize">
        <size>
         <width>190</width>
@@ -148,12 +122,6 @@
         <width>190</width>
         <height>30</height>
        </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
       </property>
       <property name="text">
        <string/>
@@ -164,7 +132,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="search_pushButton">
+     <widget class="QLineEdit" name="price_lineEdit">
       <property name="minimumSize">
        <size>
         <width>190</width>
@@ -178,7 +146,29 @@
        </size>
       </property>
       <property name="text">
-       <string>查找</string>
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="add_pushButton">
+      <property name="minimumSize">
+       <size>
+        <width>190</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>190</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>添加菜品</string>
       </property>
      </widget>
     </item>
@@ -188,14 +178,14 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>68</y>
-     <width>48</width>
+     <y>109</y>
+     <width>40</width>
      <height>20</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
+     <width>40</width>
      <height>20</height>
     </size>
    </property>
@@ -203,21 +193,24 @@
     <string notr="true">color: rgb(71, 143, 214);</string>
    </property>
    <property name="text">
-    <string>手机号：</string>
+    <string>编号：</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>158</y>
-     <width>48</width>
+     <y>159</y>
+     <width>40</width>
      <height>20</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
+     <width>40</width>
      <height>20</height>
     </size>
    </property>
@@ -225,21 +218,24 @@
     <string notr="true">color: rgb(71, 143, 214);</string>
    </property>
    <property name="text">
-    <string>结果为：</string>
+    <string>名称：</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="label_4">
+  <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>203</y>
-     <width>48</width>
+     <y>209</y>
+     <width>40</width>
      <height>20</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
+     <width>40</width>
      <height>20</height>
     </size>
    </property>
@@ -247,13 +243,12 @@
     <string notr="true">color: rgb(71, 143, 214);</string>
    </property>
    <property name="text">
-    <string>密码为：</string>
+    <string>价格：</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <zorder>layoutWidget</zorder>
-  <zorder>label_2</zorder>
-  <zorder>label_3</zorder>
-  <zorder>label_4</zorder>
  </widget>
  <resources/>
  <connections/>

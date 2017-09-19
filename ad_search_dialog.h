@@ -20,7 +20,6 @@ public:
 private:
     Ui::ad_search_Dialog *ui;
 
-    void searchpart(QHash <QString, QString> hash, QString pn);
 private slots:
     void dialogshow();                      //自己显示
 
@@ -28,6 +27,11 @@ private slots:
 
     void on_search_pushButton_clicked();    //查询按钮
 
+    void searchpart(QHash <QString, QString> hash, QString pn);
+
+    void searchpart(QVector <Waiter> vector, QString pn);
+
+    void searchpart(QVector <Chef> vector, QString pn);
 
 signals:
     void administrator_widgetshow();  //系统管理员的界面显示

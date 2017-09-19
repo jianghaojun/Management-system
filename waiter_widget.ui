@@ -6,24 +6,33 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>654</width>
-    <height>607</height>
+    <width>800</width>
+    <height>550</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>服务员界面</string>
   </property>
-  <widget class="QLabel" name="label">
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QLabel" name="table_label">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>40</y>
-     <width>91</width>
+     <x>333</x>
+     <y>15</y>
+     <width>71</width>
      <height>21</height>
     </rect>
    </property>
+   <property name="minimumSize">
+    <size>
+     <width>71</width>
+     <height>21</height>
+    </size>
+   </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(55, 81, 255);
+    <string notr="true">background-color: rgba(44, 90, 255);
 color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
@@ -33,95 +42,94 @@ color: rgb(255, 255, 255);</string>
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>60</width>
-     <height>60</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="image.qrc">:/image/images/waiter1.png</pixmap>
-   </property>
-  </widget>
   <widget class="QPushButton" name="back_pushButton">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>80</y>
+     <x>9</x>
+     <y>13</y>
      <width>60</width>
      <height>23</height>
     </rect>
    </property>
    <property name="text">
-    <string>注销</string>
+    <string>&lt;&lt;</string>
    </property>
   </widget>
   <widget class="QLabel" name="tablenumber_label">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>40</y>
+     <x>419</x>
+     <y>14</y>
      <width>71</width>
      <height>21</height>
     </rect>
    </property>
+   <property name="minimumSize">
+    <size>
+     <width>71</width>
+     <height>21</height>
+    </size>
+   </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(55, 81, 255);
+    <string notr="true">background-color: rgb(255, 255, 255);
 color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string/>
    </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
   </widget>
-  <widget class="QLabel" name="id_label">
+  <widget class="QLabel" name="id_label_2">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>40</y>
+     <x>134</x>
+     <y>15</y>
      <width>71</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
+   <property name="minimumSize">
+    <size>
+     <width>71</width>
+     <height>21</height>
+    </size>
+   </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(85, 255, 0);</string>
+    <string notr="true">background-color: rgba(44, 90, 255);
+color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
-    <string>请输入编号：</string>
+    <string>编号：</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLineEdit" name="id_lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>40</y>
-     <width>81</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLCDNumber" name="lcdNumber">
    <property name="geometry">
     <rect>
-     <x>510</x>
-     <y>40</y>
-     <width>64</width>
-     <height>23</height>
+     <x>700</x>
+     <y>14</y>
+     <width>71</width>
+     <height>21</height>
     </rect>
    </property>
+   <property name="minimumSize">
+    <size>
+     <width>71</width>
+     <height>21</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>71</width>
+     <height>21</height>
+    </size>
+   </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(78, 104, 255);</string>
+    <string notr="true">color: rgb(71, 143, 214);</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::Box</enum>
@@ -136,10 +144,10 @@ color: rgb(255, 255, 255);</string>
   <widget class="QGroupBox" name="groupBox_3">
    <property name="geometry">
     <rect>
-     <x>331</x>
-     <y>121</y>
+     <x>440</x>
+     <y>72</y>
      <width>299</width>
-     <height>469</height>
+     <height>457</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -154,14 +162,17 @@ color: rgb(255, 255, 255);</string>
       <x>10</x>
       <y>50</y>
       <width>270</width>
-      <height>410</height>
+      <height>391</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
       <width>270</width>
-      <height>410</height>
+      <height>0</height>
      </size>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::NoEditTriggers</set>
     </property>
     <column>
      <property name="text">
@@ -178,7 +189,7 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>200</x>
-      <y>20</y>
+      <y>15</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -187,14 +198,17 @@ color: rgb(255, 255, 255);</string>
      <string>查询进度</string>
     </property>
    </widget>
+   <zorder>csmenu_tableWidget</zorder>
+   <zorder>query_pushButton</zorder>
+   <zorder>label</zorder>
   </widget>
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>430</y>
+     <x>110</x>
+     <y>378</y>
      <width>300</width>
-     <height>150</height>
+     <height>151</height>
     </rect>
    </property>
    <property name="minimumSize">
@@ -223,8 +237,8 @@ color: rgb(255, 255, 255);</string>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>12</x>
-     <y>122</y>
+     <x>110</x>
+     <y>73</y>
      <width>300</width>
      <height>280</height>
     </rect>
@@ -287,7 +301,7 @@ color: rgb(255, 255, 255);</string>
           </size>
          </property>
          <property name="text">
-          <string>服务</string>
+          <string>服务01</string>
          </property>
         </widget>
        </item>
@@ -329,7 +343,7 @@ color: rgb(255, 255, 255);</string>
           </size>
          </property>
          <property name="text">
-          <string>服务</string>
+          <string>服务02</string>
          </property>
         </widget>
        </item>
@@ -371,7 +385,7 @@ color: rgb(255, 255, 255);</string>
           </size>
          </property>
          <property name="text">
-          <string>服务</string>
+          <string>服务03</string>
          </property>
         </widget>
        </item>
@@ -413,7 +427,7 @@ color: rgb(255, 255, 255);</string>
           </size>
          </property>
          <property name="text">
-          <string>服务</string>
+          <string>服务04</string>
          </property>
         </widget>
        </item>
@@ -455,7 +469,7 @@ color: rgb(255, 255, 255);</string>
           </size>
          </property>
          <property name="text">
-          <string>服务</string>
+          <string>服务05</string>
          </property>
         </widget>
        </item>
@@ -497,7 +511,7 @@ color: rgb(255, 255, 255);</string>
           </size>
          </property>
          <property name="text">
-          <string>服务</string>
+          <string>服务06</string>
          </property>
         </widget>
        </item>
@@ -539,7 +553,7 @@ color: rgb(255, 255, 255);</string>
           </size>
          </property>
          <property name="text">
-          <string>服务</string>
+          <string>服务07</string>
          </property>
         </widget>
        </item>
@@ -581,7 +595,7 @@ color: rgb(255, 255, 255);</string>
           </size>
          </property>
          <property name="text">
-          <string>服务</string>
+          <string>服务08</string>
          </property>
         </widget>
        </item>
@@ -593,7 +607,7 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>200</x>
-      <y>30</y>
+      <y>25</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -606,7 +620,7 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>30</y>
+      <y>26</y>
       <width>20</width>
       <height>20</height>
      </rect>
@@ -624,7 +638,7 @@ color: rgb(255, 255, 255);</string>
      </size>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(85, 255, 0);</string>
+     <string notr="true">background-color: rgb(71, 143, 214);</string>
     </property>
     <property name="text">
      <string/>
@@ -634,7 +648,7 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>30</y>
+      <y>26</y>
       <width>54</width>
       <height>20</height>
      </rect>
@@ -647,7 +661,7 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>30</y>
+      <y>26</y>
       <width>20</width>
       <height>20</height>
      </rect>
@@ -675,7 +689,7 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>30</y>
+      <y>26</y>
       <width>54</width>
       <height>20</height>
      </rect>
@@ -685,6 +699,112 @@ color: rgb(255, 255, 255);</string>
     </property>
    </widget>
   </widget>
+  <widget class="QLabel" name="id_label">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>15</y>
+     <width>71</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>71</width>
+     <height>21</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>901</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(44, 90, 255, 230);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="black_label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>1</y>
+     <width>81</width>
+     <height>601</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(57, 57, 57);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>51</y>
+     <width>821</width>
+     <height>541</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(230, 230, 230);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>70</y>
+     <width>60</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="image.qrc">:/image/images/waiter1.png</pixmap>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>groupBox_3</zorder>
+  <zorder>groupBox_2</zorder>
+  <zorder>groupBox</zorder>
+  <zorder>black_label</zorder>
+  <zorder>label_8</zorder>
+  <zorder>id_label_2</zorder>
+  <zorder>id_label</zorder>
+  <zorder>back_pushButton</zorder>
+  <zorder>table_label</zorder>
+  <zorder>tablenumber_label</zorder>
+  <zorder>lcdNumber</zorder>
+  <zorder>label_3</zorder>
  </widget>
  <resources>
   <include location="image.qrc"/>

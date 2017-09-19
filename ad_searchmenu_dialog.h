@@ -23,20 +23,12 @@ private:
 
     void searchpart(QMultiHash <QString, Food> hash, QString food_type, int id);   //查找菜品的部分代码，模块化
 
-    void addpart(QMultiHash <QString, Food> &hash, QString food_type, int id, QString food_name, int food_price);
-
-    void deletepart(QMultiHash <QString, Food> &hash, QString food_type, int id, QString food_name, int food_price);
-
 private slots:
     void dialogshow();                      //自己显示
 
     void on_back_pushButton_clicked();      //返回按钮
 
     void on_search_pushButton_clicked();    //查找按钮
-
-    void on_add_pushButton_clicked();       //添加菜品按钮
-
-    void on_delete_pushButton_clicked();    //删除菜品按钮
 
 signals:
     void administrator_widgetshow();  //系统管理员的界面显示

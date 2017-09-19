@@ -2,15 +2,16 @@
 #include <iomanip>
 
 //Employee类的实现
-employee::employee(int id, int e, int c, int s):id(id),evaluation(e),count(c),sum(s)
+employee::employee(int id, QString pn, QString pwd, int e, int c, double s):id(id),employee_pn(pn),
+    employee_pwd(pwd), evaluation(e),count(c),sum(s)
 {}
 
-inline int employee::get_Id() const
+int employee::get_Id() const
 {
     return id;
 }
 
-inline double employee::get_Evaluation() const
+double employee::get_Evaluation() const
 {
     return evaluation;
 }
@@ -23,8 +24,29 @@ double employee::set_Evaluation(double e)
     return evaluation;
 }
 
+int employee::get_Count() const
+{
+    return count;
+}
+
+double employee::get_Sum() const
+{
+    return sum;
+}
+
+QString employee::get_Employee_pn() const
+{
+    return employee_pn;
+}
+
+QString employee::get_Employee_pwd() const
+{
+    return employee_pwd;
+}
+
 //Waiter类的实现
-Waiter::Waiter(int id, int e, int c, int s, int wt ):employee(id, e, c, s),waiter_table_id(wt)
+Waiter::Waiter(int id, QString pn, QString pwd, int e, int c, double s, int wt ):
+    employee(id, pn, pwd, e, c, s),waiter_table_id(wt)
 {}
 
 double Waiter::set_Evaluation(int table_id, double e)
@@ -43,14 +65,14 @@ int Waiter::setWaiterTable(int wt)
     return waiter_table_id;
 }
 
-inline int Waiter::getWaiterTable() const
+int Waiter::getWaiterTable() const
 {
     return waiter_table_id;
 }
 
 
 //Chef类的实现
-Chef::Chef(int id, int e, int c, int s):employee(id, e, c, s)
+Chef::Chef(int id, QString pn, QString pwd, int e, int c, double s):employee(id, pn, pwd, e, c, s)
 {}
 
 double Chef::set_Evaluation(int food_id, double e)

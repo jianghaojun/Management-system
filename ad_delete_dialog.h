@@ -20,14 +20,18 @@ public:
 private:
     Ui::ad_delete_Dialog *ui;
 
-    void deletepart(QHash <QString, QString> &hash, QString pn);   //删除按钮的部分代码，模块化
-
 private slots:
     void dialogshow();                 //自己界面显示
 
     void on_back_pushButton_clicked(); //返回按钮
 
     void on_delete_pushButton_clicked();  //删除账户按钮
+
+    void deletepart(QHash <QString, QString> &hash, QString pn);   //删除按钮的部分代码，模块化
+
+    void deletepart(QVector <Waiter> &vector, QString pn);
+
+    void deletepart(QVector <Chef> &vector, QString pn);
 
 signals:
     void administrator_widgetshow();      //系统管理员界面显示
