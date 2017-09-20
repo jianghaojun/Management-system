@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/image">
-        <file>images/login.png</file>
         <file>images/beef.png</file>
         <file>images/borscht.png</file>
         <file>images/fish.png</file>
@@ -27,8 +26,7 @@
         <file>images/full1_table.png</file>
         <file>images/cs_head.png</file>
         <file>images/administrator.png</file>
+        <file>images/chicken.png</file>
     </qresource>
-    <qresource prefix="/qss">
-        <file>login_dialog.qss</file>
-    </qresource>
+    <qresource prefix="/qss"/>
 </RCC>

@@ -1,5 +1,6 @@
 #include "account_list.h"
 #include "database.h"
+#include <QDebug>
 
 //初始化列表:
 
@@ -327,7 +328,7 @@ void Waiter_Upload(QVector<Waiter> vector)
         pn = vector[i].get_Employee_pn();
         pwd = vector[i].get_Employee_pwd();
         id = QString::number(vector[i].get_Id());
-        evaluate = QString::number(vector[i].get_Evaluation());
+        evaluate = QString::number(vector[i].get_Evaluation(),10,2);
         count = vector[i].get_Count();
         sum = vector[i].get_Sum();
         query.prepare("insert into waiter(phone_number, password, id, evaluate, count, sum) values(?, ?, ?, ?, ?, ?)");
@@ -365,7 +366,7 @@ void Chef_Upload(QVector<Chef> vector)
         pn = vector[i].get_Employee_pn();
         pwd = vector[i].get_Employee_pwd();
         id = QString::number(vector[i].get_Id());
-        evaluate = QString::number(vector[i].get_Evaluation());
+        evaluate = QString::number(vector[i].get_Evaluation(),10,2);
         count = vector[i].get_Count();
         sum = vector[i].get_Sum();
         query.prepare("insert into chef(phone_number, password, id, evaluate, count, sum) values(?, ?, ?, ?, ?, ?)");

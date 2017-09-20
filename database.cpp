@@ -21,14 +21,6 @@ void createdatabase()
     query.exec("insert into customer values('18810301889', '123456')");
     query.exec("insert into customer values('1', '1')");
 
-    //Employee账户信息表
-    query.exec("create table employee ( phone_number varchar primary key,"
-                " password varchar)");
-    query.exec("insert into employee values('13051327250', '123456')");
-    query.exec("insert into employee values('18810301889', '123456')");
-    query.exec("insert into employee values('1', '1')");
-
-
     //Waiter账户信息表
     query.exec("create table waiter ( phone_number varchar,"
                 " password varchar, id varchar primary key, evaluate varchar, count int, sum double)");
@@ -63,5 +55,5 @@ void createdatabase()
     query.exec("insert into menu_total values(4, 'Main Course', 'Fish', 40, 0)");
 
     query.exec("insert into menu_total values(5, 'Soup', 'Seafood', 100, 0)");
-    query.exec("insert into menu_total values(6, 'Soup', 'Borscht', 30, 0)");
+    //query.exec("insert into menu_total values(6, 'Soup', 'Borscht', 30, 0)");
 }

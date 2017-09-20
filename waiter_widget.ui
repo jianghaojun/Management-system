@@ -198,9 +198,6 @@ color: rgb(255, 255, 255);</string>
      <string>查询进度</string>
     </property>
    </widget>
-   <zorder>csmenu_tableWidget</zorder>
-   <zorder>query_pushButton</zorder>
-   <zorder>label</zorder>
   </widget>
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
@@ -288,7 +285,7 @@ color: rgb(255, 255, 255);</string>
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="image.qrc">:/image/images/nocs_table.png</pixmap>
+          <pixmap>:/images/images/nocs_table.png</pixmap>
          </property>
         </widget>
        </item>
@@ -330,7 +327,7 @@ color: rgb(255, 255, 255);</string>
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="image.qrc">:/image/images/nocs_table.png</pixmap>
+          <pixmap>:/images/images/nocs_table.png</pixmap>
          </property>
         </widget>
        </item>
@@ -372,7 +369,7 @@ color: rgb(255, 255, 255);</string>
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="image.qrc">:/image/images/nocs_table.png</pixmap>
+          <pixmap>:/images/images/nocs_table.png</pixmap>
          </property>
         </widget>
        </item>
@@ -414,7 +411,7 @@ color: rgb(255, 255, 255);</string>
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="image.qrc">:/image/images/nocs_table.png</pixmap>
+          <pixmap>:/images/images/nocs_table.png</pixmap>
          </property>
         </widget>
        </item>
@@ -456,7 +453,7 @@ color: rgb(255, 255, 255);</string>
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="image.qrc">:/image/images/nocs_table.png</pixmap>
+          <pixmap>:/images/images/nocs_table.png</pixmap>
          </property>
         </widget>
        </item>
@@ -498,7 +495,7 @@ color: rgb(255, 255, 255);</string>
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="image.qrc">:/image/images/nocs_table.png</pixmap>
+          <pixmap>:/images/images/nocs_table.png</pixmap>
          </property>
         </widget>
        </item>
@@ -540,7 +537,7 @@ color: rgb(255, 255, 255);</string>
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="image.qrc">:/image/images/nocs_table.png</pixmap>
+          <pixmap>:/images/images/nocs_table.png</pixmap>
          </property>
         </widget>
        </item>
@@ -582,7 +579,7 @@ color: rgb(255, 255, 255);</string>
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="image.qrc">:/image/images/nocs_table.png</pixmap>
+          <pixmap>:/images/images/nocs_table.png</pixmap>
          </property>
         </widget>
        </item>

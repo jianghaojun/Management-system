@@ -60,6 +60,7 @@ login_Dialog::login_Dialog(QWidget *parent) :
                                 "color:rgb(160,160,160);"
                                 "}");
 
+
     ui->registerpushButton->setStyleSheet("QPushButton{"
                                           "border-style:hidden;"
                                           "color:rgb(0,147,221);}"

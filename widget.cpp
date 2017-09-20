@@ -347,21 +347,6 @@ void Widget::on_querytable_pushButton_clicked()
 void Widget::on_A1_pushButton_clicked()
 {
     seatbutton_part(0);
-    /*
-    if(!ui->tablenumber_label->text().isEmpty())
-    {
-        QMessageBox::information(this, tr("上座失败"), tr("您已经选择了座位！"), QMessageBox::Ok);
-    }
-    else
-    {
-        QMessageBox::information(this, tr("上座成功"), tr("请就坐！"), QMessageBox::Ok);
-        ui->tablenumber_label->setText("01");
-        ui->tablenumber_label->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-        ui->A1_label->setPixmap(QPixmap(":/image/images/full_table.png"));
-        extern QVector <Table> Table_list;
-        Table_list[0].setTableStatus(1);  // 0表示空闲，1表示有客人但没有服务员，2表示既有客人也有服务员
-    }
-    */
 }
 
 void Widget::on_A2_pushButton_clicked()
@@ -456,8 +441,6 @@ void Widget::show_mymenu(int table_number)
         {
             QPushButton *delete_button = new QPushButton(tr("删除"));
             ui->mymenu_tableWidget->setCellWidget(row, 2, delete_button);
-            //delete_button->setProperty("row", row);
-
             connect(delete_button, SIGNAL(clicked()), this, SLOT(delete_button_clicked()));
         }
         else if(f1.getFood_Status() == 1)
@@ -634,7 +617,7 @@ void Widget::receive_customer_pn(QString pn)
         }
         else
         {
-            food_picture = ":/image/images/salad.png";
+            food_picture = ":/image/images/chicken.png";
         }
 
         int row = ui->menu_tableWidget->rowCount();

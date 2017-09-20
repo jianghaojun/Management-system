@@ -37,11 +37,11 @@
    <property name="currentIndex">
     <number>0</number>
    </property>
-   <widget class="QWidget" name="tabWidgetPage1" native="true">
+   <widget class="QWidget" name="tabWidgetPage1">
     <attribute name="title">
      <string>菜单管理</string>
     </attribute>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>29</x>
@@ -196,11 +196,11 @@
      </layout>
     </widget>
    </widget>
-   <widget class="QWidget" name="tabWidgetPage2" native="true">
+   <widget class="QWidget" name="tabWidgetPage2">
     <attribute name="title">
      <string>账户管理</string>
     </attribute>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>29</x>

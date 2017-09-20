@@ -138,7 +138,17 @@ void manager_widget::on_query_pushButton_clicked()
         {
             int id = Waiter_list[i].get_Id();
             int count = Waiter_list[i].get_Count();
-            double waiter_evaluate = Waiter_list[i].get_Evaluation();
+            double sum = Waiter_list[i].get_Sum();
+            double waiter_evaluate;
+            if(count == 0)
+            {
+                waiter_evaluate = 0;
+            }
+            else
+            {
+                waiter_evaluate = sum/count;
+            }
+
 
             int row = ui->waiter_tableWidget->rowCount();
             ui->waiter_tableWidget->insertRow(row);
@@ -152,7 +162,7 @@ void manager_widget::on_query_pushButton_clicked()
             item2->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
             ui->waiter_tableWidget->setItem(row, 1, item2);
 
-            QTableWidgetItem *item3 = new QTableWidgetItem("平均分：" + QString::number(waiter_evaluate));
+            QTableWidgetItem *item3 = new QTableWidgetItem("平均分：" + QString::number(waiter_evaluate,10,2));
             item3->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
             ui->waiter_tableWidget->setItem(row, 2, item3);
 
@@ -170,7 +180,7 @@ void manager_widget::on_query_pushButton_clicked()
                 item5->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
                 ui->waiter_tableWidget->setItem(row, 1, item5);
 
-                QTableWidgetItem *item6 = new QTableWidgetItem(QString::number(evaluate));
+                QTableWidgetItem *item6 = new QTableWidgetItem(QString::number(evaluate,10,2));
                 item6->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
                 ui->waiter_tableWidget->setItem(row, 2, item6);
 
@@ -184,7 +194,17 @@ void manager_widget::on_query_pushButton_clicked()
         {
             int id = Chef_list[i].get_Id();
             int count = Chef_list[i].get_Count();
-            double chef_evaluate = Chef_list[i].get_Evaluation();
+            double sum = Chef_list[i].get_Sum();
+            double chef_evaluate;
+            if(count == 0)
+            {
+                chef_evaluate = 0;
+            }
+            else
+            {
+                chef_evaluate = sum/count;
+            }
+            qDebug()<<chef_evaluate;
 
             int row = ui->chef_tableWidget->rowCount();
             ui->chef_tableWidget->insertRow(row);
@@ -198,7 +218,7 @@ void manager_widget::on_query_pushButton_clicked()
             item2->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
             ui->chef_tableWidget->setItem(row, 1, item2);
 
-            QTableWidgetItem *item3 = new QTableWidgetItem("平均分：" + QString::number(chef_evaluate));
+            QTableWidgetItem *item3 = new QTableWidgetItem("平均分：" + QString::number(chef_evaluate,10,2));
             item3->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
             ui->chef_tableWidget->setItem(row, 2, item3);
 
@@ -217,7 +237,7 @@ void manager_widget::on_query_pushButton_clicked()
                 item5->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
                 ui->chef_tableWidget->setItem(row, 1, item5);
 
-                QTableWidgetItem *item6 = new QTableWidgetItem(QString::number(evaluate));
+                QTableWidgetItem *item6 = new QTableWidgetItem(QString::number(evaluate,10,2));
                 item6->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
                 ui->chef_tableWidget->setItem(row, 2, item6);
                 ++j;

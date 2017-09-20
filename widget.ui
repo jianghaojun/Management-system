@@ -65,7 +65,7 @@
     <enum>QTabWidget::North</enum>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -592,7 +592,7 @@
     <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="tab_2">
     <attribute name="title">
@@ -636,7 +636,7 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>256</width>
+       <width>225</width>
        <height>481</height>
       </rect>
      </property>
